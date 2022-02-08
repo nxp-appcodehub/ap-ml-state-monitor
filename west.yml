@@ -1,0 +1,48 @@
+# The west manifest file (west.yml) for MCUXpresso SDK overall delivery.
+#
+# The per-workspace west configuration file, ${workspace_path}/.west/config,
+# specifies the path of the project containing this manifest file, the
+# path is relative to the workspace location ${workspace_path}.
+#
+#     [manifest]
+#     path = appswpacks-ml-state-monitor
+#
+# See the west documentation for more information:
+#
+# https://docs.zephyrproject.org/latest/guides/west/index.html
+
+manifest:
+
+  remotes:
+    - name: nxpmicro
+      url-base: https://github.com/NXPmicro
+
+  defaults:
+    remote: nxpmicro
+
+  projects:
+    - name: mcux-sdk
+      revision: MCUX_2.10.0
+      path: core
+      import:
+        name-allowlist:
+          - FreeRTOS-Kernel
+          - mcux-sdk-middleware-sdmmc
+    - name: fatfs
+      path: middleware/fatfs
+      revision: MCUX_2.10.0
+    - name: mcux-sdk-middleware-eiq
+      revision: MCUX_2.10.0
+      path: middleware/eiq
+    - name: mcux-sdk-middleware-deepviewrt
+      revision: MCUX_2.10.0
+      path: middleware/eiq/deepviewrt
+    - name: mcux-sdk-middleware-glow
+      revision: MCUX_2.10.0
+      path: middleware/eiq/glow
+    - name: mcux-sdk-middleware-tensorflow
+      revision: MCUX_2.10.0
+      path: middleware/eiq/tensorflow-lite
+
+  self:
+    path: app_sw_packs
