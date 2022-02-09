@@ -265,19 +265,19 @@
     </debug_configurations>
     <include_paths>
       <include_path path="core/boards/evkmimxrt1170" project_relative_path="board" type="c_include"/>
-      <include_path path="app_sw_packs/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="source" type="c_include"/>
-      <include_path path="app_sw_packs/ml_state_monitor/mcu_app/inf-eng/deepviewrt" project_relative_path="source/inf-eng/deepviewrt" type="c_include"/>
-      <include_path path="app_sw_packs/ml_state_monitor/mcu_app/inf-eng/glow" project_relative_path="source/inf-eng/glow" type="c_include"/>
-      <include_path path="app_sw_packs/ml_state_monitor/mcu_app/inf-eng/tensorflow" project_relative_path="source/inf-eng/tensorflow" type="c_include"/>
-      <include_path path="app_sw_packs/ml_state_monitor/mcu_app/models" project_relative_path="source/models" type="c_include"/>
-      <include_path path="app_sw_packs/ml_state_monitor/mcu_app/models/glow" project_relative_path="source/models/glow" type="c_include"/>
-      <include_path path="app_sw_packs/ml_state_monitor/mcu_app/models/tensorflow" project_relative_path="source/models/tensorflow" type="c_include"/>
-      <include_path path="app_sw_packs/ml_state_monitor/mcu_app/models/validation_data" project_relative_path="source/models/validation_data" type="c_include"/>
-      <include_path path="app_sw_packs/ml_state_monitor/mcu_app/sdcard" project_relative_path="source/sdcard" type="c_include"/>
-      <include_path path="app_sw_packs/ml_state_monitor/mcu_app/sensor" project_relative_path="source/sensor" type="c_include"/>
-      <include_path path="app_sw_packs/ml_state_monitor/mcu_app/models/deepviewrt" project_relative_path="source/models/deepviewrt" type="asm_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="source" type="c_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/inf-eng/deepviewrt" project_relative_path="source/inf-eng/deepviewrt" type="c_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/inf-eng/glow" project_relative_path="source/inf-eng/glow" type="c_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/inf-eng/tensorflow" project_relative_path="source/inf-eng/tensorflow" type="c_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/models" project_relative_path="source/models" type="c_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/models/glow" project_relative_path="source/models/glow" type="c_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/models/tensorflow" project_relative_path="source/models/tensorflow" type="c_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/models/validation_data" project_relative_path="source/models/validation_data" type="c_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/sdcard" project_relative_path="source/sdcard" type="c_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/sensor" project_relative_path="source/sensor" type="c_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/models/deepviewrt" project_relative_path="source/models/deepviewrt" type="asm_include"/>
     </include_paths>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/armgcc" project_relative_path="./" type="workspace" toolchain="armgcc">
+    <source path="examples/ml_state_monitor/mcu_app/armgcc" project_relative_path="./" type="workspace" toolchain="armgcc">
       <files mask="build_all.bat"/>
       <files mask="build_all.sh"/>
       <files mask="clean.bat"/>
@@ -300,12 +300,12 @@
       <files mask="clock_config.h"/>
       <files mask="dcd.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="board" type="src">
+    <source path="examples/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="board" type="src">
       <files mask="pin_mux.c"/>
       <files mask="evkmimxrt1170.c"/>
       <files mask="sdmmc_config.c"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="board" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="board" type="c_include">
       <files mask="pin_mux.h"/>
       <files mask="evkmimxrt1170.h"/>
       <files mask="sdmmc_config.h"/>
@@ -313,98 +313,98 @@
       <files mask="issdk_hal.h"/>
       <files mask="RTE_Device.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/issdk/drivers/systick" project_relative_path="board" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/issdk/drivers/systick" project_relative_path="board" type="c_include">
       <files mask="systick_utils.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="source" type="src">
+    <source path="examples/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="source" type="src">
       <files mask="main.c"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="source" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="source" type="c_include">
       <files mask="FreeRTOSConfig.h"/>
       <files mask="version.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/inf-eng/deepviewrt" project_relative_path="source/inf-eng/deepviewrt" type="src">
+    <source path="examples/ml_state_monitor/mcu_app/inf-eng/deepviewrt" project_relative_path="source/inf-eng/deepviewrt" type="src">
       <files mask="rtmmodel.c"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/inf-eng/deepviewrt" project_relative_path="source/inf-eng/deepviewrt" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/inf-eng/deepviewrt" project_relative_path="source/inf-eng/deepviewrt" type="c_include">
       <files mask="rtmmodel.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/inf-eng/glow" project_relative_path="source/inf-eng/glow" type="src">
+    <source path="examples/ml_state_monitor/mcu_app/inf-eng/glow" project_relative_path="source/inf-eng/glow" type="src">
       <files mask="glowmodel.c"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/inf-eng/glow" project_relative_path="source/inf-eng/glow" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/inf-eng/glow" project_relative_path="source/inf-eng/glow" type="c_include">
       <files mask="glowmodel.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/inf-eng/tensorflow" project_relative_path="source/inf-eng/tensorflow" type="src">
+    <source path="examples/ml_state_monitor/mcu_app/inf-eng/tensorflow" project_relative_path="source/inf-eng/tensorflow" type="src">
       <files mask="get_top_n.cpp"/>
       <files mask="model.cpp"/>
       <files mask="model_fan_clsf_ops.cpp"/>
       <files mask="output_postproc.cpp"/>
       <files mask="tfmodel.c"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/inf-eng/tensorflow" project_relative_path="source/inf-eng/tensorflow" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/inf-eng/tensorflow" project_relative_path="source/inf-eng/tensorflow" type="c_include">
       <files mask="get_top_n.h"/>
       <files mask="model.h"/>
       <files mask="output_postproc.h"/>
       <files mask="tfmodel.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/models" project_relative_path="source/models" type="src">
+    <source path="examples/ml_state_monitor/mcu_app/models" project_relative_path="source/models" type="src">
       <files mask="model_selection_rtm.S"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/models" project_relative_path="source/models" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/models" project_relative_path="source/models" type="c_include">
       <files mask="model_selection.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/models/deepviewrt" project_relative_path="source/models/deepviewrt" type="src">
+    <source path="examples/ml_state_monitor/mcu_app/models/deepviewrt" project_relative_path="source/models/deepviewrt" type="src">
       <files mask="model_fan_clsf.rtm"/>
       <files mask="model_fan_clsf_quant.rtm"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/models/glow" project_relative_path="source/models/glow" type="binary">
+    <source path="examples/ml_state_monitor/mcu_app/models/glow" project_relative_path="source/models/glow" type="binary">
       <files mask="glow_model_fan_clsf.weights.bin"/>
       <files mask="glow_model_fan_clsf_quant.weights.bin"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/models/glow" project_relative_path="source/models/glow" type="src">
+    <source path="examples/ml_state_monitor/mcu_app/models/glow" project_relative_path="source/models/glow" type="src">
       <files mask="glow_model_fan_clsf.o"/>
       <files mask="glow_model_fan_clsf.weights.txt"/>
       <files mask="glow_model_fan_clsf_quant.o"/>
       <files mask="glow_model_fan_clsf_quant.weights.txt"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/models/glow" project_relative_path="source/models/glow" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/models/glow" project_relative_path="source/models/glow" type="c_include">
       <files mask="glow_model_fan_clsf.h"/>
       <files mask="glow_model_fan_clsf_quant.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/models/tensorflow" project_relative_path="source/models/tensorflow" type="src">
+    <source path="examples/ml_state_monitor/mcu_app/models/tensorflow" project_relative_path="source/models/tensorflow" type="src">
       <files mask="model_fan_clsf.cpp"/>
       <files mask="model_fan_clsf_quant.cpp"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/models/tensorflow" project_relative_path="source/models/tensorflow" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/models/tensorflow" project_relative_path="source/models/tensorflow" type="c_include">
       <files mask="model_fan_clsf.h"/>
       <files mask="model_fan_clsf_quant.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/models/validation_data" project_relative_path="source/models/validation_data" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/models/validation_data" project_relative_path="source/models/validation_data" type="c_include">
       <files mask="vdset_3_vd3_clog.h"/>
       <files mask="vdset_3_vd3_friction.h"/>
       <files mask="vdset_3_vd3_off.h"/>
       <files mask="vdset_3_vd3_on.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/sdcard" project_relative_path="source/sdcard" type="src">
+    <source path="examples/ml_state_monitor/mcu_app/sdcard" project_relative_path="source/sdcard" type="src">
       <files mask="sdcard_capture.c"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/sdcard" project_relative_path="source/sdcard" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/sdcard" project_relative_path="source/sdcard" type="c_include">
       <files mask="ffconf.h"/>
       <files mask="sdcard_capture.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/sensor" project_relative_path="source/sensor" type="src">
+    <source path="examples/ml_state_monitor/mcu_app/sensor" project_relative_path="source/sensor" type="src">
       <files mask="capture.c"/>
       <files mask="sensor_collect.c"/>
       <files mask="sensor_raw.c"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/sensor" project_relative_path="source/sensor" type="c_include">
+    <source path="examples/ml_state_monitor/mcu_app/sensor" project_relative_path="source/sensor" type="c_include">
       <files mask="capture.h"/>
       <files mask="labels.h"/>
       <files mask="sensor_collect.h"/>
       <files mask="sensor_raw.h"/>
     </source>
-    <source path="app_sw_packs/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="doc" type="doc">
+    <source path="examples/ml_state_monitor/mcu_app/evkmimxrt1170" project_relative_path="doc" type="doc">
       <files mask="readme.txt"/>
     </source>
   </example>

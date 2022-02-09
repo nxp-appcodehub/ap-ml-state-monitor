@@ -45,4 +45,4 @@ manifest:
       path: middleware/eiq/tensorflow-lite
 
   self:
-    path: app_sw_packs
+    path: examples

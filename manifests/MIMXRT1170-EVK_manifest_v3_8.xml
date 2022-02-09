@@ -99,8 +99,8 @@ ${load}</script>
       </memory>
       <total_memory flash_size_kb="65536" ram_size_kb="32768"/>
       <examples>
-        <example id="evkmimxrt1170_ml_state_monitor_cm7" name="ml_state_monitor_cm7" brief="ML State Monitor MCU Application" toolchain="mcuxpresso" compiler="compiler_gcc" category="app_sw_packs" path="app_sw_packs/ml_state_monitor/mcu_app/evkmimxrt1170">
-          <external path="app_sw_packs/ml_state_monitor/mcu_app/evkmimxrt1170" type="xml">
+        <example id="evkmimxrt1170_ml_state_monitor_cm7" name="ml_state_monitor_cm7" brief="ML State Monitor MCU Application" toolchain="mcuxpresso" compiler="compiler_gcc" category="app_sw_packs" path="examples/ml_state_monitor/mcu_app/evkmimxrt1170">
+          <external path="examples/ml_state_monitor/mcu_app/evkmimxrt1170" type="xml">
             <files mask="ml_state_monitor_cm7_v3_8.xml"/>
           </external>
         </example>
@@ -8704,7 +8704,7 @@ ${load}</script>
         <include_path relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="platform.drivers.lpi2c_cmsis.MIMXRT1176" name="lpi2c_cmsis" brief="LPI2C CMSIS Driver" version="2.1.0" full_name="LPI2C CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="app_sw_packs/ml_state_monitor/mcu_app/cmsis_drivers" project_base_path="drivers">
+    <component id="platform.drivers.lpi2c_cmsis.MIMXRT1176" name="lpi2c_cmsis" brief="LPI2C CMSIS Driver" version="2.1.0" full_name="LPI2C CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="examples/ml_state_monitor/mcu_app/cmsis_drivers" project_base_path="drivers">
       <dependencies>
         <all>
           <component_dependency value="platform.drivers.lpi2c_edma.MIMXRT1176"/>
@@ -8723,7 +8723,7 @@ ${load}</script>
         <include_path relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="platform.drivers.lpspi_cmsis.MIMXRT1176" name="lpspi_cmsis" brief="LPSPI CMSIS Driver" version="2.4.0" full_name="LPSPI CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="app_sw_packs/ml_state_monitor/mcu_app/cmsis_drivers" project_base_path="drivers">
+    <component id="platform.drivers.lpspi_cmsis.MIMXRT1176" name="lpspi_cmsis" brief="LPSPI CMSIS Driver" version="2.4.0" full_name="LPSPI CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="examples/ml_state_monitor/mcu_app/cmsis_drivers" project_base_path="drivers">
       <dependencies>
         <all>
           <component_dependency value="platform.drivers.lpspi_edma.MIMXRT1176"/>
@@ -8742,7 +8742,7 @@ ${load}</script>
         <include_path relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="platform.drivers.lpuart_cmsis.MIMXRT1176" name="lpuart_cmsis" brief="LPUART CMSIS Driver" version="2.2.0" full_name="LPUART CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="app_sw_packs/ml_state_monitor/mcu_app/cmsis_drivers" project_base_path="drivers">
+    <component id="platform.drivers.lpuart_cmsis.MIMXRT1176" name="lpuart_cmsis" brief="LPUART CMSIS Driver" version="2.2.0" full_name="LPUART CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="examples/ml_state_monitor/mcu_app/cmsis_drivers" project_base_path="drivers">
       <dependencies>
         <all>
           <component_dependency value="platform.drivers.lpuart_edma.MIMXRT1176"/>
@@ -8837,7 +8837,7 @@ ${load}</script>
         <include_path relative_path="template/sd" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.issdk.drivers.gpio_imxrt.MIMXRT1176" name="gpio_imxrt" brief="ISSDK GPIO Driver for i.MXRT" version="1.7.0" full_name="Middleware issdk drivers gpio_imxrt" devices="MIMXRT1176xxxxx" user_visible="false" type="middleware" package_base_path="app_sw_packs/ml_state_monitor/mcu_app/issdk" project_base_path="gpio_driver">
+    <component id="middleware.issdk.drivers.gpio_imxrt.MIMXRT1176" name="gpio_imxrt" brief="ISSDK GPIO Driver for i.MXRT" version="1.7.0" full_name="Middleware issdk drivers gpio_imxrt" devices="MIMXRT1176xxxxx" user_visible="false" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/issdk" project_base_path="gpio_driver">
       <source relative_path="drivers/gpio/i.mx" project_relative_path="./" type="src">
         <files mask="gpio_driver.c"/>
       </source>
@@ -8852,7 +8852,7 @@ ${load}</script>
         <include_path relative_path="drivers/gpio" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.issdk.sensor.fxas21002.MIMXRT1176" name="issdk_fxas21002" brief="ISSDK FXAS21002 Sensor Driver Files" version="1.7.0" full_name="Middleware issdk sensor fxas21002" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="app_sw_packs/ml_state_monitor/mcu_app/issdk" project_base_path="sensors">
+    <component id="middleware.issdk.sensor.fxas21002.MIMXRT1176" name="issdk_fxas21002" brief="ISSDK FXAS21002 Sensor Driver Files" version="1.7.0" full_name="Middleware issdk sensor fxas21002" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/issdk" project_base_path="sensors">
       <dependencies>
         <all>
           <component_dependency value="CMSIS_Driver_Include.I2C.MIMXRT1176"/>
@@ -8870,7 +8870,7 @@ ${load}</script>
         <include_path relative_path="sensors" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.issdk.sensor.fxos8700.MIMXRT1176" name="issdk_fxos8700" brief="ISSDK FXOS8700 Sensor Driver Files" version="1.7.0" full_name="Middleware issdk sensor fxos8700" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="app_sw_packs/ml_state_monitor/mcu_app/issdk" project_base_path="sensors">
+    <component id="middleware.issdk.sensor.fxos8700.MIMXRT1176" name="issdk_fxos8700" brief="ISSDK FXOS8700 Sensor Driver Files" version="1.7.0" full_name="Middleware issdk sensor fxos8700" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/issdk" project_base_path="sensors">
       <dependencies>
         <all>
           <component_dependency value="CMSIS_Driver_Include.I2C.MIMXRT1176"/>
@@ -8888,7 +8888,7 @@ ${load}</script>
         <include_path relative_path="sensors" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.issdk.sensor.interface.common.MIMXRT1176" name="issdk_interfaces" brief="ISSDK Sensor Interface Common" version="1.7.0" full_name="Middleware issdk sensor interface common" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="app_sw_packs/ml_state_monitor/mcu_app/issdk" project_base_path="interfaces">
+    <component id="middleware.issdk.sensor.interface.common.MIMXRT1176" name="issdk_interfaces" brief="ISSDK Sensor Interface Common" version="1.7.0" full_name="Middleware issdk sensor interface common" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/issdk" project_base_path="interfaces">
       <dependencies>
         <all>
           <component_dependency value="CMSIS_Driver_Include.I2C.MIMXRT1176"/>

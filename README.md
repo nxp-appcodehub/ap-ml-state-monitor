@@ -14,8 +14,7 @@ west update
 Replace ```${revision}``` with any SDK revision you wish to achieve. This can be ```mcux_release_github``` if you want the latest state, or any commit SHA.
 
 ### Build and run the application
-To build and run the application please refer to the Lab Guide or check the steps in [Run a project using MCUXpresso IDE](https://github.com/NXPmicro/mcux-sdk/blob/main/docs/run_a_project_using_mcux.md)
-(*Note!* Use the board manifest file from the `app_sw_packs/manifests` folder).
+To build and run the application please refer to the Lab Guide or check the steps in [Run a project using MCUXpresso IDE](https://github.com/NXPmicro/mcux-sdk/blob/main/docs/run_a_project_using_mcux.md).
 
 ---
 
