@@ -38,6 +38,18 @@
  *
  * See http://www.freertos.org/a00110.html.
  *----------------------------------------------------------*/
+#ifndef configENABLE_FPU
+  #define configENABLE_FPU                      1
+#endif
+#ifndef configENABLE_MPU
+  #define configENABLE_MPU                      0
+#endif
+#ifndef configENABLE_TRUSTZONE
+  #define configENABLE_TRUSTZONE                0
+#endif
+#ifndef configRUN_FREERTOS_SECURE_ONLY
+  #define configRUN_FREERTOS_SECURE_ONLY        1
+#endif
 
 #define configUSE_PREEMPTION                    1
 #define configUSE_TICKLESS_IDLE                 0
@@ -94,7 +106,7 @@
 #define configUSE_TIMERS                        1
 #define configTIMER_TASK_PRIORITY               (configMAX_PRIORITIES - 1)
 #define configTIMER_QUEUE_LENGTH                10
-#define configTIMER_TASK_STACK_DEPTH            (configMINIMAL_STACK_SIZE * 2)
+#define configTIMER_TASK_STACK_DEPTH            (configMINIMAL_STACK_SIZE * 3)
 
 /* Define to trap errors during development. */
 #define configASSERT(x) if(( x) == 0) {taskDISABLE_INTERRUPTS(); for (;;);}

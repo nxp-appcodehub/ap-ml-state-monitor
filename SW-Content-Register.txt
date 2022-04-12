@@ -1,5 +1,5 @@
 MCU Application            Name: MCU Application                             
-                           Version: 1.0.0                                    
+                           Version: 1.1.0                                    
                            Outgoing License: BSD-3-Clause                    
                            License File: COPYING-BSD-3                       
                            Format: source code, header files, ml models      
@@ -7,8 +7,35 @@ MCU Application            Name: MCU Application
                            learning models on MCU embedded devices           
                            Location: ml_state_monitor/mcu_app/               
 
-ML Application             Name: ML Application                             
+MIMXRT1170-EVK             Name: MCU Application support for MIMXRT1170-EVK  
                            Version: 1.0.0                                    
+                           Outgoing License: BSD-3-Clause                    
+                           License File: COPYING-BSD-3                       
+                           Format: source code, header files                 
+                           Description: Software support for running the     
+                           MCU Application on MIMXRT1170-EVK board           
+                           Location: ml_state_monitor/mcu_app/evkmimxrt1170/ 
+
+FRDM-K66F                  Name: MCU Application support for FRDM-K66F       
+                           Version: 1.0.0                                    
+                           Outgoing License: BSD-3-Clause                    
+                           License File: COPYING-BSD-3                       
+                           Format: source code, header files                 
+                           Description: Software support for running the     
+                           MCU Application on FRDM-K66F board                
+                           Location: ml_state_monitor/mcu_app/frdmk66f/      
+
+LPC55S69-EVK               Name: MCU Application support for LPC55S69-EVK    
+                           Version: 1.0.0                                    
+                           Outgoing License: BSD-3-Clause                    
+                           License File: COPYING-BSD-3                       
+                           Format: source code, header files                 
+                           Description: Software support for running the     
+                           MCU Application on LPC55S69-EVK board             
+                           Location: ml_state_monitor/mcu_app/lpcxpresso55s69
+
+ML Application             Name: ML Application                             
+                           Version: 1.1.0                                    
                            Outgoing License: BSD-3-Clause                    
                            License File: COPYING-BSD-3                       
                            Format: python script, training dataset csv files,
@@ -16,4 +43,3 @@ ML Application             Name: ML Application
                            Description: Software script for running machine  
                            learning training and generation on Host machine  
                            Location: ml_state_monitor/ml_app/                
-

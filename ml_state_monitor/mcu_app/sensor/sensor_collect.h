@@ -63,6 +63,10 @@ extern "C" {
         SENSOR_COLLECT_RUN_INFENG == SENSOR_COLLECT_INFENG_DEEPVIEWRT ||\
         SENSOR_COLLECT_RUN_INFENG == SENSOR_COLLECT_INFENG_GLOW)
 #define SENSOR_COLLECT_DATA_FORMAT              SENSOR_COLLECT_DATA_FORMAT_INTERLEAVED
+#if (SENSOR_COLLECT_RUN_INFENG == SENSOR_COLLECT_INFENG_DEEPVIEWRT) &&\
+    (defined __CORTEX_M) && (__CORTEX_M != 7U)
+#error "Unsupported DeepViewRT inference engine for the selected core"
+#endif /* SENSOR_COLLECT_INFENG_DEEPVIEWRT && __CORTEX_M */
 #else
 #error "Unsupported inference engine"
 #endif /* SENSOR_COLLECT_RUN_INFENG */

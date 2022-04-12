@@ -100,11 +100,13 @@ status_t SENSOR_Init(void)
 {
     int32_t status;
 
+#if 0
     /* GPIO reset pin REVB */
     gpio_pin_config_t rst_config = {kGPIO_DigitalOutput, 0, kGPIO_NoIntmode};
 
     /* Init output RST GPIO. This is quick fix for FRDM_STBC_AGM01 REV B board*/
     GPIO_PinInit(GPIO1, 21, &rst_config);
+#endif
 
     /*! Initialize the I2C driver. */
     status = I2Cdrv->Initialize(I2C_S_SIGNAL_EVENT);

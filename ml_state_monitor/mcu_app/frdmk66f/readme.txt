@@ -14,7 +14,7 @@ Toolchain supported
 Hardware requirements
 =====================
 - Mini/micro USB cable
-- MIMXRT1170-EVK board
+- FRDM-K66F board
 - FRDM-STBC-AGM01 board (optional)
 - Arduino ProtoShield + 5V DC Fan (optional)
 - SD card (optional)
@@ -28,17 +28,15 @@ Though, if the external parts are used the following configuration must be follo
 On FRDM-STBC-AGM01 sensor shield board:
 I2C Mode: The example uses I2C1 so the Pins 2-3 of Jumpers J6 and J7 on FRDM-STBC-AGM01 should be connected.
 --------------------------------------
-On MIMXRT1170-EVK:
-Optional - plug the FRMD-STBC-AGM01 kit to the Arduino connector (J9, J10, J25, J26)
+On FRDM-K66F:
+Optional - plug the FRMD-STBC-AGM01 kit to the Arduino connector (J1, J2, J3, J4)
 Optional - plug the Arduino ProtoShield + DC Fan to the Arduino connector
-Optional - weld R136 (0 ohm) for GPIO SD card detection and change the BOARD_SDMMC_SD_CD_TYPE to kSD_DetectCardByGpioCD in board\sdmmc_config.h
 Optional - insert an SD card into the socket (J15)
 Optional - power the DC Fan
-Put jumper SW5 to 3-2 position
 
 Prepare the Demo
 ================
-1.  Connect a USB cable between the host PC and the OpenSDA USB port on the target board. 
+1.  Connect a USB cable between the host PC and the OpenSDA USB port (J26) on the target board. 
 2.  Open a serial terminal with the following settings:
     - 115200 baud rate
     - 8 data bits
@@ -65,6 +63,6 @@ Class to evaluate (provide only the numeric index):
 Pool size (total number of predictions to compute):
         >>> 936
 
-Inference 0?0 | t 737 us | count: 732/936/936 | FAN-CLOG
+Inference 0?0 | t 10630 us | count: 732/936/936 | FAN-CLOG
 Prediction Accuracy for class FAN-CLOG 78.21%
-Average Inference Time 746.4 (us)
+Average Inference Time 10627.4 (us)
