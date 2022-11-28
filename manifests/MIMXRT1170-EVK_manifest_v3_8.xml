@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_MIMXRT1170-EVK" name="MIMXRT1170-EVK" brief="This is SDK version 2.10.0 manifest file. It describes the content of the MIMXRT1170-EVK and additional settings for tools that support SDK version 2.10.0" format_version="3.8" api_version="2.0.0" configuration="37bbf4eb706f3814bfad8f3a27525c83" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.8.xsd">
+<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_MIMXRT1170-EVK_APPSWPACKS_ML_STATE_MONITOR" name="MIMXRT1170-EVK_APPSWPACKS_ML_STATE_MONITOR" brief="This is SDK version 2.12.0 manifest file. It describes the content of the MIMXRT1170-EVK and additional settings for tools that support SDK version 2.12.0" format_version="3.8" api_version="2.0.0" configuration="37bbf4eb706f3814bfad8f3a27525c83" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.8.xsd">
   <!--Timestamp (UTC): 2021-08-03 13:04:46.745866-->
   <!--This manifest is generated based on sdk repo commit: a40647dd23698fa812ab2e267466ae159e1a5d45-->
   <defines>
@@ -7,7 +7,7 @@
     <define name="CPU_$|package|_$|core|" value=""/>
     <define name="CPU_$|package|_$|core_name|" value=""/>
   </defines>
-  <ksdk id="MCUXpressoSDK2100" name="MCUXpressoSDK2100" version="2.10.0"/>
+  <ksdk id="MCUXpressoSDK2120" name="MCUXpressoSDK2120" version="2.12.0"/>
   <compilers>
     <compiler id="compiler_gcc" name="gcc" type="gcc"/>
   </compilers>
@@ -89,8 +89,8 @@ ${load}</script>
   <boards>
     <board id="evkmimxrt1170" name="MIMXRT1170-EVK" href="https://www.nxp.com/pip/MIMXRT1170-EVK" version="1.0.0" package="MIMXRT1176DVMAA">
       <description>i.MX RT1170 Evaluation Kit</description>
-      <image path="core/boards/evkmimxrt1170" type="image">
-        <files mask="evkmimxrt1170.png"/>
+      <image path="examples/ml_state_monitor" type="image">
+        <files mask="ml-state-monitor-logo.png"/>
       </image>
       <memory>
         <memoryBlock id="BOARD_FLASH_evkmimxrt1170" name="BOARD_FLASH" addr="30000000" size="04000000" type="ExtFlash" access="RO"/>
@@ -99,8 +99,8 @@ ${load}</script>
       </memory>
       <total_memory flash_size_kb="65536" ram_size_kb="32768"/>
       <examples>
-        <example id="evkmimxrt1170_ml_state_monitor_cm7" name="ml_state_monitor_cm7" brief="ML State Monitor MCU Application" toolchain="mcuxpresso" compiler="compiler_gcc" category="app_sw_packs" path="examples/ml_state_monitor/mcu_app/evkmimxrt1170">
-          <external path="examples/ml_state_monitor/mcu_app/evkmimxrt1170" type="xml">
+        <example id="evkmimxrt1170_ml_state_monitor_cm7" name="ml_state_monitor_cm7" brief="ML State Monitor MCU Application" toolchain="mcuxpresso" compiler="compiler_gcc" category="app_sw_packs" path="examples/ml_state_monitor/mcu_app/boards/evkmimxrt1170/ml_state_monitor">
+          <external path="examples/ml_state_monitor/mcu_app/boards/evkmimxrt1170/ml_state_monitor" type="xml">
             <files mask="ml_state_monitor_cm7_v3_8.xml"/>
           </external>
         </example>
@@ -826,6 +826,7 @@ ${load}</script>
       </source>
       <source relative_path="./" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="core_cm7.h"/>
+        <files mask="cachel1_armv7.h"/>
       </source>
       <source relative_path="./" type="c_include" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx">
         <files mask="mpu_armv7.h"/>
@@ -5266,7 +5267,7 @@ ${load}</script>
         <files mask="fsl_mmcau.dox" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.multicore.MIMXRT1176" name="multicore middleware" brief="Multicore SDK" version="2.10.0" full_name="Multicore Software Development Kit" devices="MIMXRT1176xxxxx" user_visible="true" type="other" package_base_path="middleware/multicore" project_base_path="multicore">
+    <component id="middleware.multicore.MIMXRT1176" name="multicore middleware" brief="Multicore SDK" version="2.12.0" full_name="Multicore Software Development Kit" devices="MIMXRT1176xxxxx" user_visible="true" type="other" package_base_path="middleware/multicore" project_base_path="multicore">
       <source relative_path="./" type="doc">
         <files mask="readme.txt" hidden="true"/>
         <files mask="ChangeLogKSDK.txt" hidden="true"/>
@@ -8704,7 +8705,7 @@ ${load}</script>
         <include_path relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="platform.drivers.lpi2c_cmsis.MIMXRT1176" name="lpi2c_cmsis" brief="LPI2C CMSIS Driver" version="2.1.0" full_name="LPI2C CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="examples/ml_state_monitor/mcu_app/cmsis_drivers" project_base_path="drivers">
+    <component id="platform.drivers.lpi2c_cmsis.MIMXRT1176" name="lpi2c_cmsis" brief="LPI2C CMSIS Driver" version="2.1.0" full_name="LPI2C CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="core/cmsis_drivers/lpi2c" project_base_path="drivers">
       <dependencies>
         <all>
           <component_dependency value="platform.drivers.lpi2c_edma.MIMXRT1176"/>
@@ -8723,7 +8724,7 @@ ${load}</script>
         <include_path relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="platform.drivers.lpspi_cmsis.MIMXRT1176" name="lpspi_cmsis" brief="LPSPI CMSIS Driver" version="2.4.0" full_name="LPSPI CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="examples/ml_state_monitor/mcu_app/cmsis_drivers" project_base_path="drivers">
+    <component id="platform.drivers.lpspi_cmsis.MIMXRT1176" name="lpspi_cmsis" brief="LPSPI CMSIS Driver" version="2.4.0" full_name="LPSPI CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="core/cmsis_drivers/lpspi" project_base_path="drivers">
       <dependencies>
         <all>
           <component_dependency value="platform.drivers.lpspi_edma.MIMXRT1176"/>
@@ -8742,7 +8743,7 @@ ${load}</script>
         <include_path relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="platform.drivers.lpuart_cmsis.MIMXRT1176" name="lpuart_cmsis" brief="LPUART CMSIS Driver" version="2.2.0" full_name="LPUART CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="examples/ml_state_monitor/mcu_app/cmsis_drivers" project_base_path="drivers">
+    <component id="platform.drivers.lpuart_cmsis.MIMXRT1176" name="lpuart_cmsis" brief="LPUART CMSIS Driver" version="2.2.0" full_name="LPUART CMSIS Driver" devices="MIMXRT1176xxxxx" device_cores="cm4_MIMXRT1176xxxxx cm7_MIMXRT1176xxxxx" slave_roles="M4SLAVE M7SLAVE" user_visible="true" type="CMSIS_driver" package_base_path="core/cmsis_drivers/lpuart" project_base_path="drivers">
       <dependencies>
         <all>
           <component_dependency value="platform.drivers.lpuart_edma.MIMXRT1176"/>
@@ -8837,7 +8838,7 @@ ${load}</script>
         <include_path relative_path="template/sd" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.issdk.drivers.gpio_imxrt.MIMXRT1176" name="gpio_imxrt" brief="ISSDK GPIO Driver for i.MXRT" version="1.7.0" full_name="Middleware issdk drivers gpio_imxrt" devices="MIMXRT1176xxxxx" user_visible="false" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/issdk" project_base_path="gpio_driver">
+    <component id="middleware.issdk.drivers.gpio_imxrt.MIMXRT1176" name="gpio_imxrt" brief="ISSDK GPIO Driver for i.MXRT" version="1.7.0" full_name="Middleware issdk drivers gpio_imxrt" devices="MIMXRT1176xxxxx" user_visible="false" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/common/issdk" project_base_path="gpio_driver">
       <source relative_path="drivers/gpio/i.mx" project_relative_path="./" type="src">
         <files mask="gpio_driver.c"/>
       </source>
@@ -8852,7 +8853,7 @@ ${load}</script>
         <include_path relative_path="drivers/gpio" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.issdk.sensor.fxas21002.MIMXRT1176" name="issdk_fxas21002" brief="ISSDK FXAS21002 Sensor Driver Files" version="1.7.0" full_name="Middleware issdk sensor fxas21002" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/issdk" project_base_path="sensors">
+    <component id="middleware.issdk.sensor.fxas21002.MIMXRT1176" name="issdk_fxas21002" brief="ISSDK FXAS21002 Sensor Driver Files" version="1.7.0" full_name="Middleware issdk sensor fxas21002" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/common/issdk" project_base_path="sensors">
       <dependencies>
         <all>
           <component_dependency value="CMSIS_Driver_Include.I2C.MIMXRT1176"/>
@@ -8870,7 +8871,7 @@ ${load}</script>
         <include_path relative_path="sensors" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.issdk.sensor.fxos8700.MIMXRT1176" name="issdk_fxos8700" brief="ISSDK FXOS8700 Sensor Driver Files" version="1.7.0" full_name="Middleware issdk sensor fxos8700" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/issdk" project_base_path="sensors">
+    <component id="middleware.issdk.sensor.fxos8700.MIMXRT1176" name="issdk_fxos8700" brief="ISSDK FXOS8700 Sensor Driver Files" version="1.7.0" full_name="Middleware issdk sensor fxos8700" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/common/issdk" project_base_path="sensors">
       <dependencies>
         <all>
           <component_dependency value="CMSIS_Driver_Include.I2C.MIMXRT1176"/>
@@ -8888,7 +8889,7 @@ ${load}</script>
         <include_path relative_path="sensors" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.issdk.sensor.interface.common.MIMXRT1176" name="issdk_interfaces" brief="ISSDK Sensor Interface Common" version="1.7.0" full_name="Middleware issdk sensor interface common" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/issdk" project_base_path="interfaces">
+    <component id="middleware.issdk.sensor.interface.common.MIMXRT1176" name="issdk_interfaces" brief="ISSDK Sensor Interface Common" version="1.7.0" full_name="Middleware issdk sensor interface common" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app/common/issdk" project_base_path="interfaces">
       <dependencies>
         <all>
           <component_dependency value="CMSIS_Driver_Include.I2C.MIMXRT1176"/>
@@ -9055,6 +9056,7 @@ ${load}</script>
       <source relative_path="tensorflow-lite/tensorflow/lite/c" type="c_include">
         <files mask="common.h"/>
         <files mask="builtin_op_data.h"/>
+        <files mask="c_api_types.h"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/c" type="src">
         <files mask="common.c"/>
@@ -9087,7 +9089,9 @@ ${load}</script>
         <files mask="max.h"/>
         <files mask="min.h"/>
         <files mask="portable_tensor.h"/>
+        <files mask="portable_tensor_utils.h"/>
         <files mask="quantization_util.h"/>
+        <files mask="runtime_shape.h"/>
         <files mask="strided_slice_logic.h"/>
         <files mask="tensor_ctypes.h"/>
         <files mask="types.h"/>
@@ -9100,36 +9104,54 @@ ${load}</script>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/kernels/internal/reference" type="c_include">
         <files mask="add.h"/>
+        <files mask="add_n.h"/>
         <files mask="arg_min_max.h"/>
+        <files mask="batch_to_space_nd.h"/>
         <files mask="binary_function.h"/>
         <files mask="ceil.h"/>
         <files mask="comparisons.h"/>
         <files mask="concatenation.h"/>
         <files mask="conv.h"/>
+        <files mask="cumsum.h"/>
+        <files mask="depth_to_space.h"/>
         <files mask="depthwiseconv_float.h"/>
         <files mask="depthwiseconv_uint8.h"/>
         <files mask="dequantize.h"/>
+        <files mask="elu.h"/>
+        <files mask="exp.h"/>
+        <files mask="fill.h"/>
         <files mask="floor.h"/>
+        <files mask="floor_div.h"/>
+        <files mask="floor_mod.h"/>
         <files mask="fully_connected.h"/>
         <files mask="hard_swish.h"/>
         <files mask="l2normalization.h"/>
+        <files mask="leaky_relu.h"/>
+        <files mask="log_softmax.h"/>
         <files mask="logistic.h"/>
         <files mask="maximum_minimum.h"/>
         <files mask="mul.h"/>
         <files mask="neg.h"/>
         <files mask="pad.h"/>
         <files mask="pooling.h"/>
+        <files mask="portable_tensor_utils_impl.h"/>
         <files mask="prelu.h"/>
         <files mask="process_broadcast_shapes.h"/>
         <files mask="quantize.h"/>
         <files mask="reduce.h"/>
         <files mask="requantize.h"/>
+        <files mask="resize_bilinear.h"/>
         <files mask="resize_nearest_neighbor.h"/>
         <files mask="round.h"/>
+        <files mask="slice.h"/>
         <files mask="softmax.h"/>
+        <files mask="space_to_batch_nd.h"/>
+        <files mask="space_to_depth.h"/>
         <files mask="strided_slice.h"/>
         <files mask="sub.h"/>
         <files mask="tanh.h"/>
+        <files mask="transpose.h"/>
+        <files mask="transpose_conv.h"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/kernels/internal/reference/integer_ops" type="c_include">
         <files mask="add.h"/>
@@ -9142,15 +9164,21 @@ ${load}</script>
         <files mask="mul.h"/>
         <files mask="pooling.h"/>
         <files mask="tanh.h"/>
+        <files mask="transpose_conv.h"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/micro" type="src">
         <files mask="all_ops_resolver.cpp"/>
         <files mask="debug_log.cpp"/>
+        <files mask="fake_micro_context.cpp"/>
+        <files mask="flatbuffer_utils.cpp"/>
         <files mask="memory_helpers.cpp"/>
         <files mask="micro_allocator.cpp"/>
+        <files mask="micro_context.cpp"/>
         <files mask="micro_error_reporter.cpp"/>
+        <files mask="micro_graph.cpp"/>
         <files mask="micro_interpreter.cpp"/>
         <files mask="micro_profiler.cpp"/>
+        <files mask="micro_resource_variable.cpp"/>
         <files mask="micro_string.cpp"/>
         <files mask="micro_time.cpp"/>
         <files mask="micro_utils.cpp"/>
@@ -9162,69 +9190,140 @@ ${load}</script>
         <files mask="all_ops_resolver.h"/>
         <files mask="compatibility.h"/>
         <files mask="debug_log.h"/>
+        <files mask="fake_micro_context.h"/>
+        <files mask="flatbuffer_utils.h"/>
         <files mask="memory_helpers.h"/>
         <files mask="micro_allocator.h"/>
+        <files mask="micro_arena_constants.h"/>
+        <files mask="micro_context.h"/>
         <files mask="micro_error_reporter.h"/>
+        <files mask="micro_graph.h"/>
         <files mask="micro_interpreter.h"/>
         <files mask="micro_mutable_op_resolver.h"/>
         <files mask="micro_op_resolver.h"/>
         <files mask="micro_profiler.h"/>
+        <files mask="micro_resource_variable.h"/>
         <files mask="micro_string.h"/>
         <files mask="micro_time.h"/>
         <files mask="micro_utils.h"/>
         <files mask="recording_micro_allocator.h"/>
-        <files mask="recording_micro_interpreter.h"/>
         <files mask="recording_simple_memory_allocator.h"/>
         <files mask="simple_memory_allocator.h"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/micro/kernels" type="c_include">
         <files mask="activation_utils.h"/>
+        <files mask="activations.h"/>
+        <files mask="add.h"/>
+        <files mask="circular_buffer.h"/>
+        <files mask="conv.h"/>
+        <files mask="depthwise_conv.h"/>
+        <files mask="dequantize.h"/>
+        <files mask="ethosu.h"/>
         <files mask="fully_connected.h"/>
+        <files mask="hard_swish.h"/>
         <files mask="kernel_runner.h"/>
         <files mask="kernel_util.h"/>
+        <files mask="leaky_relu.h"/>
+        <files mask="logical.h"/>
+        <files mask="logistic.h"/>
         <files mask="micro_ops.h"/>
         <files mask="micro_utils.h"/>
+        <files mask="mul.h"/>
+        <files mask="pooling.h"/>
+        <files mask="prelu.h"/>
+        <files mask="quantize.h"/>
+        <files mask="softmax.h"/>
+        <files mask="sub.h"/>
+        <files mask="svdf.h"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/micro/kernels" type="src">
+        <files mask="activations_common.cpp"/>
+        <files mask="add_common.cpp"/>
+        <files mask="add_n.cpp"/>
         <files mask="arg_min_max.cpp"/>
+        <files mask="assign_variable.cpp"/>
+        <files mask="batch_to_space_nd.cpp"/>
+        <files mask="call_once.cpp"/>
+        <files mask="cast.cpp"/>
         <files mask="ceil.cpp"/>
         <files mask="circular_buffer.cpp"/>
+        <files mask="circular_buffer_common.cpp"/>
         <files mask="comparisons.cpp"/>
         <files mask="concatenation.cpp"/>
+        <files mask="conv_common.cpp"/>
+        <files mask="cumsum.cpp"/>
+        <files mask="depth_to_space.cpp"/>
+        <files mask="depthwise_conv_common.cpp"/>
         <files mask="dequantize.cpp"/>
+        <files mask="dequantize_common.cpp"/>
+        <files mask="detection_postprocess.cpp"/>
         <files mask="elementwise.cpp"/>
+        <files mask="elu.cpp"/>
         <files mask="ethosu.cpp"/>
+        <files mask="exp.cpp"/>
+        <files mask="expand_dims.cpp"/>
+        <files mask="fill.cpp"/>
+        <files mask="floor_div.cpp"/>
+        <files mask="floor_mod.cpp"/>
+        <files mask="fully_connected_common.cpp"/>
+        <files mask="gather.cpp"/>
+        <files mask="gather_nd.cpp"/>
         <files mask="hard_swish.cpp"/>
-        <files mask="kernel_runner.cpp"/>
+        <files mask="hard_swish_common.cpp"/>
+        <files mask="if.cpp"/>
         <files mask="kernel_util.cpp"/>
+        <files mask="l2_pool_2d.cpp"/>
         <files mask="l2norm.cpp"/>
+        <files mask="leaky_relu_common.cpp"/>
+        <files mask="log_softmax.cpp"/>
         <files mask="logical.cpp"/>
+        <files mask="logical_common.cpp"/>
+        <files mask="logistic_common.cpp"/>
         <files mask="maximum_minimum.cpp"/>
+        <files mask="mirror_pad.cpp"/>
+        <files mask="mul_common.cpp"/>
         <files mask="neg.cpp"/>
         <files mask="pack.cpp"/>
         <files mask="pad.cpp"/>
+        <files mask="pooling_common.cpp"/>
         <files mask="prelu.cpp"/>
-        <files mask="quantize.cpp"/>
+        <files mask="prelu_common.cpp"/>
+        <files mask="quantize_common.cpp"/>
+        <files mask="read_variable.cpp"/>
         <files mask="reduce.cpp"/>
         <files mask="reshape.cpp"/>
+        <files mask="resize_bilinear.cpp"/>
         <files mask="resize_nearest_neighbor.cpp"/>
         <files mask="round.cpp"/>
         <files mask="shape.cpp"/>
+        <files mask="slice.cpp"/>
+        <files mask="softmax_common.cpp"/>
+        <files mask="space_to_batch_nd.cpp"/>
+        <files mask="space_to_depth.cpp"/>
         <files mask="split.cpp"/>
         <files mask="split_v.cpp"/>
+        <files mask="squeeze.cpp"/>
         <files mask="strided_slice.cpp"/>
         <files mask="sub.cpp"/>
+        <files mask="sub_common.cpp"/>
+        <files mask="svdf_common.cpp"/>
         <files mask="tanh.cpp"/>
+        <files mask="transpose.cpp"/>
         <files mask="unpack.cpp"/>
+        <files mask="var_handle.cpp"/>
+        <files mask="zeros_like.cpp"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/micro/memory_planner" type="c_include">
         <files mask="greedy_memory_planner.h"/>
         <files mask="linear_memory_planner.h"/>
-        <files mask="memory_planner.h"/>
+        <files mask="memory_plan_struct.h"/>
+        <files mask="micro_memory_planner.h"/>
+        <files mask="non_persistent_buffer_planner_shim.h"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/micro/memory_planner" type="src">
         <files mask="greedy_memory_planner.cpp"/>
         <files mask="linear_memory_planner.cpp"/>
+        <files mask="non_persistent_buffer_planner_shim.cpp"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/schema" type="src">
         <files mask="schema_utils.cpp"/>
@@ -9248,7 +9347,7 @@ ${load}</script>
           <component_dependency value="CMSIS_DSP_Library.MIMXRT1176"/>
         </all>
       </dependencies>
-      <source relative_path="tensorflow-lite/tensorflow/lite/micro/kernels/cmsis-nn" type="src">
+      <source relative_path="tensorflow-lite/tensorflow/lite/micro/kernels/cmsis_nn" type="src">
         <files mask="add.cpp"/>
         <files mask="conv.cpp"/>
         <files mask="depthwise_conv.cpp"/>
@@ -9261,7 +9360,10 @@ ${load}</script>
       <source relative_path="tensorflow-lite/tensorflow/lite/micro/kernels" type="src">
         <files mask="activations.cpp"/>
         <files mask="floor.cpp"/>
+        <files mask="leaky_relu.cpp"/>
         <files mask="logistic.cpp"/>
+        <files mask="quantize.cpp"/>
+        <files mask="transpose_conv.cpp"/>
       </source>
       <source exclude="true" relative_path="tensorflow-lite/tensorflow/lite/micro/kernels" type="src">
         <files mask="add.cpp"/>
@@ -9288,11 +9390,14 @@ ${load}</script>
         <files mask="depthwise_conv.cpp"/>
         <files mask="floor.cpp"/>
         <files mask="fully_connected.cpp"/>
+        <files mask="leaky_relu.cpp"/>
         <files mask="logistic.cpp"/>
         <files mask="mul.cpp"/>
         <files mask="pooling.cpp"/>
+        <files mask="quantize.cpp"/>
         <files mask="svdf.cpp"/>
         <files mask="softmax.cpp"/>
+        <files mask="transpose_conv.cpp"/>
       </source>
       <include_paths>
         <include_path relative_path="tensorflow-lite" type="c_include"/>
@@ -9353,6 +9458,7 @@ ${load}</script>
         <files mask="utils.h"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Include" type="c_include">
+        <files mask="arm_nn_math_types.h"/>
         <files mask="arm_nn_tables.h"/>
         <files mask="arm_nn_types.h"/>
         <files mask="arm_nnfunctions.h"/>
@@ -9451,7 +9557,7 @@ ${load}</script>
         <files mask="LICENSE.txt"/>
       </source>
       <include_paths>
-        <include_path relative_path="tensorflow-lite/third_party" type="c_include"/>
+        <include_path relative_path="tensorflow-lite/third_party/cmsis" type="c_include"/>
       </include_paths>
     </component>
     <component id="middleware.eiq.tensorflow_lite_micro.third_party.fft2d.MIMXRT1176" name="FFT2D" brief="General Purpose FFT (Fast Fourier/Cosine/Sine Transform) Package" version="1.0.0" full_name="FFT2D library" devices="MIMXRT1176xxxxx" category="Machine Learning/eIQ" user_visible="false" type="middleware" package_base_path="middleware/eiq" project_base_path="eiq/tensorflow-lite">
@@ -9476,9 +9582,24 @@ ${load}</script>
         <files mask="LICENSE.txt"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/flatbuffers/include/flatbuffers" project_relative_path="third_party/flatbuffers/include/flatbuffers" type="c_include">
+        <files mask="allocator.h"/>
+        <files mask="array.h"/>
         <files mask="base.h"/>
+        <files mask="buffer.h"/>
+        <files mask="buffer_ref.h"/>
+        <files mask="default_allocator.h"/>
+        <files mask="detached_buffer.h"/>
+        <files mask="flatbuffer_builder.h"/>
         <files mask="flatbuffers.h"/>
+        <files mask="flexbuffers.h"/>
         <files mask="stl_emulation.h"/>
+        <files mask="strings.h"/>
+        <files mask="struct.h"/>
+        <files mask="table.h"/>
+        <files mask="util.h"/>
+        <files mask="vector.h"/>
+        <files mask="vector_downward.h"/>
+        <files mask="verifier.h"/>
       </source>
       <include_paths>
         <include_path relative_path="tensorflow-lite/third_party/flatbuffers/include" project_relative_path="third_party/flatbuffers/include" type="c_include"/>
@@ -9748,8 +9869,8 @@ ${load}</script>
       <include_paths>
         <include_path relative_path="common/sensor" project_relative_path="sensor" type="c_include"/>
       </include_paths>
-    </component>
-    <component id="app_sw_packs.ml_state_monitor.sensor.MIMXRT1176" name="app_sw_pack/ml_state_monitor/sensor" brief="app_sw_pack/ml_state_monitor/sensor" version="1.0.0" full_name="app_sw_pack/ml_state_monitor/sensor" devices="MIMXRT1176xxxxx" category="app_sw_pack/ml_state_monitor/sensor" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/sensor" project_base_path="source/sensor">
+    </component>  
+    <component id="app_sw_packs.ml_state_monitor.sensor.MIMXRT1176" name="app_sw_pack/ml_state_monitor/sensor" brief="app_sw_pack/ml_state_monitor/sensor" version="1.0.0" full_name="app_sw_pack/ml_state_monitor/sensor" devices="MIMXRT1176xxxxx" category="app_sw_pack/ml_state_monitor/sensor" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/sensor" project_base_path="source/sensor">
       <source relative_path="./" project_relative_path="./" type="src">
         <files mask="capture.c"/>
         <files mask="sensor_collect.c"/>
@@ -9764,7 +9885,7 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="app_sw_packs.ml_state_monitor.ml_interface.MIMXRT1176" name="app_sw_packs/ml_state_monitor/ml_interface" brief="app_sw_packs/ml_state_monitor/ml_interface" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/ml_interface" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/iml_interface" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/sensor" project_base_path="source/sensor">
+    <component id="app_sw_packs.ml_state_monitor.ml_interface.MIMXRT1176" name="app_sw_packs/ml_state_monitor/ml_interface" brief="app_sw_packs/ml_state_monitor/ml_interface" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/ml_interface" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/iml_interface" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/sensor" project_base_path="source/sensor">
       <source relative_path="./" project_relative_path="./" type="c_include">
         <files mask="labels.h"/>
       </source>
@@ -9772,7 +9893,7 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="app_sw_packs.ml_state_monitor.inference_engine_interface.deepviewrt.MIMXRT1176" name="app_sw_packs/ml_state_monitor/inference_engine_interface/deepviewrt" brief="app_sw_packs/ml_state_monitor/inference_engine_interface/deepviewrt" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/inference_engine_interface/deepviewrt" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/inference_engine_interface/deepviewrt" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/inf-eng/deepviewrt" project_base_path="source/inf-eng/deepviewrt">
+    <component id="app_sw_packs.ml_state_monitor.inference_engine_interface.deepviewrt.MIMXRT1176" name="app_sw_packs/ml_state_monitor/inference_engine_interface/deepviewrt" brief="app_sw_packs/ml_state_monitor/inference_engine_interface/deepviewrt" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/inference_engine_interface/deepviewrt" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/inference_engine_interface/deepviewrt" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/inf-eng/deepviewrt" project_base_path="source/inf-eng/deepviewrt">
       <source relative_path="./" project_relative_path="./" type="src">
         <files mask="rtmmodel.c"/>
       </source>
@@ -9783,7 +9904,7 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="app_sw_packs.ml_state_monitor.inference_engine_interface.glow.MIMXRT1176" name="app_sw_packs/ml_state_monitor/inference_engine_interface/glow" brief="app_sw_packs/ml_state_monitor/inference_engine_interface/glow" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/inference_engine_interface/glow" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/inference_engine_interface/glow" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/inf-eng/glow" project_base_path="source/inf-eng/glow">
+    <component id="app_sw_packs.ml_state_monitor.inference_engine_interface.glow.MIMXRT1176" name="app_sw_packs/ml_state_monitor/inference_engine_interface/glow" brief="app_sw_packs/ml_state_monitor/inference_engine_interface/glow" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/inference_engine_interface/glow" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/inference_engine_interface/glow" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/inf-eng/glow" project_base_path="source/inf-eng/glow">
       <source relative_path="./" project_relative_path="./" type="src">
         <files mask="glowmodel.c"/>
       </source>
@@ -9794,7 +9915,7 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="app_sw_packs.ml_state_monitor.inference_engine_interface.tensorflow.MIMXRT1176" name="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" brief="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/inf-eng/tensorflow" project_base_path="source/inf-eng/tensorflow">
+    <component id="app_sw_packs.ml_state_monitor.inference_engine_interface.tensorflow.MIMXRT1176" name="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" brief="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/inf-eng/tensorflow" project_base_path="source/inf-eng/tensorflow">
       <source relative_path="./" project_relative_path="./" type="src">
         <files mask="get_top_n.cpp"/>
         <files mask="model.cpp"/>
@@ -9812,7 +9933,7 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="app_sw_packs.ml_state_monitor.model_bundle.selection.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/selection" brief="app_sw_packs/ml_state_monitor/model_bundle/selection" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/selection" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/selection" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/models" project_base_path="source/models">
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.selection.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/selection" brief="app_sw_packs/ml_state_monitor/model_bundle/selection" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/selection" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/selection" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models" project_base_path="source/models">
       <source relative_path="./" project_relative_path="./" type="c_include">
         <files mask="model_selection.h"/>
       </source>
@@ -9820,7 +9941,7 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="app_sw_packs.ml_state_monitor.model_bundle.deepviewrt.selection.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt/selection" brief="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt/selection" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt/selection" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt/selection" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/models" project_base_path="source/models">
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.deepviewrt.selection.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt/selection" brief="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt/selection" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt/selection" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt/selection" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models" project_base_path="source/models">
       <source relative_path="./" project_relative_path="./" type="src">
         <files mask="model_selection_rtm.S"/>
       </source>
@@ -9828,7 +9949,7 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="app_sw_packs.ml_state_monitor.model_bundle.deepviewrt.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt" brief="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/models/deepviewrt" project_base_path="source/models/deepviewrt">
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.deepviewrt.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt" brief="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/deepviewrt" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/deepviewrt" project_base_path="source/models/deepviewrt">
       <source relative_path="./" project_relative_path="./" type="src">
         <files mask="model_fan_clsf.rtm"/>
         <files mask="model_fan_clsf_quant.rtm"/>
@@ -9837,7 +9958,7 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="asm_include"/>
       </include_paths>
     </component>
-    <component id="app_sw_packs.ml_state_monitor.model_bundle.glow.cm7.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/glow/cm7" brief="app_sw_packs/ml_state_monitor/model_bundle/glow/cm7" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/glow/cm7" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/glow/cm7" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/models/glow/cortex_m7" project_base_path="source/models/glow">
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.glow.cm7.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/glow/cm7" brief="app_sw_packs/ml_state_monitor/model_bundle/glow/cm7" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/glow/cm7" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/glow/cm7" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/glow/cortex_m7" project_base_path="source/models/glow">
       <source relative_path="./" project_relative_path="./" type="binary">
         <files mask="glow_model_fan_clsf.weights.bin"/>
         <files mask="glow_model_fan_clsf_quant.weights.bin"/>
@@ -9856,7 +9977,7 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="app_sw_packs.ml_state_monitor.model_bundle.tensorflow.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" brief="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/models/tensorflow" project_base_path="source/models/tensorflow">
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.tensorflow.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" brief="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/tensorflow" project_base_path="source/models/tensorflow">
       <source relative_path="./" project_relative_path="./" type="src">
         <files mask="model_fan_clsf.cpp"/>
         <files mask="model_fan_clsf_quant.cpp"/>
@@ -9869,7 +9990,7 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="app_sw_packs.ml_state_monitor.validation_data.MIMXRT1176" name="app_sw_packs/ml_state_monitor/validation_data" brief="app_sw_packs/ml_state_monitor/validation_data" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/validation_data" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/validation_data" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/models/validation_data" project_base_path="source/models/validation_data">
+    <component id="app_sw_packs.ml_state_monitor.validation_data.MIMXRT1176" name="app_sw_packs/ml_state_monitor/validation_data" brief="app_sw_packs/ml_state_monitor/validation_data" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/validation_data" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/validation_data" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/validation_data" project_base_path="source/models/validation_data">
       <source relative_path="./" project_relative_path="./" type="c_include">
         <files mask="vdset_3_vd3_clog.h"/>
         <files mask="vdset_3_vd3_friction.h"/>
@@ -9880,7 +10001,7 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
-    <component id="app_sw_packs.ml_state_monitor.sdcard_capture.MIMXRT1176" name="app_sw_packs/ml_state_monitor/sdcard_capture" brief="app_sw_packs/ml_state_monitor/sdcard_capture" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/sdcard_capture" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/sdcard_capture" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/sdcard" project_base_path="source/sdcard">
+    <component id="app_sw_packs.ml_state_monitor.sdcard_capture.MIMXRT1176" name="app_sw_packs/ml_state_monitor/sdcard_capture" brief="app_sw_packs/ml_state_monitor/sdcard_capture" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/sdcard_capture" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/sdcard_capture" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/sdcard" project_base_path="source/sdcard">
       <source relative_path="./" project_relative_path="./" type="src">
         <files mask="sdcard_capture.c"/>
       </source>

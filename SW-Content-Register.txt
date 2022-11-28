@@ -1,40 +1,50 @@
-MCU Application            Name: MCU Application                             
+Release Name: Application Software Pack - ML State Monitor
+Release Version: 1.2.0
+Package License: BSD-3-Clause 
+Compatible SDK Version: 2.12.0
+Compatible SDK Tag: MCUX_2.12.0
+Compatible SDK Url: https://github.com/NXPmicro/mcux-sdk/tree/MCUX_2.12.0
+
+Common Components          Name: Common Support Components                   
                            Version: 1.1.0                                    
                            Outgoing License: BSD-3-Clause                    
                            License File: COPYING-BSD-3                       
                            Format: source code, header files, ml models      
                            Description: Software code for running machine    
                            learning models on MCU embedded devices           
-                           Location: ml_state_monitor/mcu_app/               
+                           Location: ml_state_monitor/mcu_app/common/        
 
-MIMXRT1170-EVK             Name: MCU Application support for MIMXRT1170-EVK  
+ml_state_monitor_cm7       Name: MIMXRT1170-EVK ML State Monitor Application 
                            Version: 1.0.0                                    
                            Outgoing License: BSD-3-Clause                    
                            License File: COPYING-BSD-3                       
                            Format: source code, header files                 
                            Description: Software support for running the     
-                           MCU Application on MIMXRT1170-EVK board           
-                           Location: ml_state_monitor/mcu_app/evkmimxrt1170/ 
+                           ML State Monitor Application on MIMXRT1170-EVK    
+                           Location: ml_state_monitor/mcu_app/boards/        
+                           evkmimxrt1170/ml_state_monitor/                   
 
-FRDM-K66F                  Name: MCU Application support for FRDM-K66F       
+ml_state_monitor_cm4       Name: FRDM-K66F ML State Monitor Application      
                            Version: 1.0.0                                    
                            Outgoing License: BSD-3-Clause                    
                            License File: COPYING-BSD-3                       
                            Format: source code, header files                 
                            Description: Software support for running the     
-                           MCU Application on FRDM-K66F board                
-                           Location: ml_state_monitor/mcu_app/frdmk66f/      
+                           ML State Monitor Application on FRDM-K66F         
+                           Location: ml_state_monitor/mcu_app/boards/        
+                           frdmk66f/ml_state_monitor/                        
 
-LPC55S69-EVK               Name: MCU Application support for LPC55S69-EVK    
+ml_state_monitor_cm33      Name: LPC55S69-EVK ML State Monitor Application   
                            Version: 1.0.0                                    
                            Outgoing License: BSD-3-Clause                    
                            License File: COPYING-BSD-3                       
                            Format: source code, header files                 
                            Description: Software support for running the     
-                           MCU Application on LPC55S69-EVK board             
-                           Location: ml_state_monitor/mcu_app/lpcxpresso55s69
+                           ML State Monitor Application on LPC55S69-EVK      
+                           Location: ml_state_monitor/mcu_app/boards/        
+                           lpcxpresso55s69/ml_state_monitor/                 
 
-ML Application             Name: ML Application                             
+ML Application             Name: ML Application                              
                            Version: 1.1.0                                    
                            Outgoing License: BSD-3-Clause                    
                            License File: COPYING-BSD-3                       

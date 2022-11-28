@@ -7,7 +7,7 @@ The application starts by creating a main task called "MainTask" which runs the 
 by following the settings configured in sensor_coolect.h and model_selection.h.
 
 # Toolchain supported
-- MCUXpresso  11.5
+- MCUXpresso  11.6.1
 
 # Hardware requirements
 - Mini/micro USB cable

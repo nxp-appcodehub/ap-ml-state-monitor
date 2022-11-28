@@ -22,27 +22,16 @@ manifest:
 
   projects:
     - name: mcux-sdk
-      revision: MCUX_2.10.0
+      revision: MCUX_2.12.0
       path: core
       import:
         name-allowlist:
           - FreeRTOS-Kernel
+          - fatfs
           - mcux-sdk-middleware-sdmmc
-    - name: fatfs
-      path: middleware/fatfs
-      revision: MCUX_2.10.0
-    - name: mcux-sdk-middleware-eiq
-      revision: MCUX_2.10.0
-      path: middleware/eiq
-    - name: mcux-sdk-middleware-deepviewrt
-      revision: MCUX_2.10.0
-      path: middleware/eiq/deepviewrt
-    - name: mcux-sdk-middleware-glow
-      revision: MCUX_2.10.0
-      path: middleware/eiq/glow
-    - name: mcux-sdk-middleware-tensorflow
-      revision: MCUX_2.10.0
-      path: middleware/eiq/tensorflow-lite
-
+          - mcux-sdk-middleware-eiq
+          - mcux-sdk-middleware-deepviewrt
+          - mcux-sdk-middleware-glow
+          - mcux-sdk-middleware-tensorflow
   self:
     path: examples

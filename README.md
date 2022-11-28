@@ -1,6 +1,10 @@
-# Application Software Pack: ML State Monitor
+<p align="center">
+	<img width="200" height="150" src="ml_state_monitor/ml-state-monitor-logo.png">
+</p>
 
-This repository holds the [ML State Monitor App SW Pack](https://www.nxp.com/design/software/embedded-software/application-software-pack-ml-state-monitor:APP-SW-PACK-ML-STATE-MONITOR) and depends on the MCUXpresso SDK overall delivery.
+<h1 align="center"> Application Software Pack: ML State Monitor </h1>
+
+This repository holds the [ML-Based System State  Monitor App SW Pack](https://www.nxp.com/design/software/embedded-software/application-software-pack-ml-state-monitor:APP-SW-PACK-ML-STATE-MONITOR) and depends on the [MCUXpresso SDK](https://github.com/NXPmicro/mcux-sdk) overall delivery (revision [MCUX_2.12.0](https://github.com/NXPmicro/mcux-sdk/tree/MCUX_2.12.0)).
 
 ### Assemble the application
 
