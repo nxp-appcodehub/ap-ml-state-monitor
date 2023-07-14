@@ -1,55 +1,112 @@
-Release Name: Application Software Pack - ML State Monitor
-Release Version: 1.2.0
-Package License: BSD-3-Clause 
+Package: Application Software Pack - ML State Monitor
+Version: 1.3.0
+Outgoing License: LA_OPT_NXP_Software_License v49 September 2023 - Additional Distribution License granted, license in Section 2.3 applies
+License File: LICENSE.txt
+Description and Comments: Enable developers to develop and deploy time-series NN
+Release Location: https://github.com/nxp-appcodehub/ap-ml-state-monitor
+Origin: NXP (BSD-3-Clause)
+
 Compatible SDK Version: 2.12.0
 Compatible SDK Tag: MCUX_2.12.0
 Compatible SDK Url: https://github.com/NXPmicro/mcux-sdk/tree/MCUX_2.12.0
 
-Common Components          Name: Common Support Components                   
-                           Version: 1.1.0                                    
-                           Outgoing License: BSD-3-Clause                    
-                           License File: COPYING-BSD-3                       
-                           Format: source code, header files, ml models      
-                           Description: Software code for running machine    
-                           learning models on MCU embedded devices           
-                           Location: ml_state_monitor/mcu_app/common/        
+--------------------------------------------
 
-ml_state_monitor_cm7       Name: MIMXRT1170-EVK ML State Monitor Application 
-                           Version: 1.0.0                                    
-                           Outgoing License: BSD-3-Clause                    
-                           License File: COPYING-BSD-3                       
-                           Format: source code, header files                 
-                           Description: Software support for running the     
-                           ML State Monitor Application on MIMXRT1170-EVK    
-                           Location: ml_state_monitor/mcu_app/boards/        
-                           evkmimxrt1170/ml_state_monitor/                   
+Package:                    Common Support Components
+Version:                    1.2.0
+Outgoing License:           BSD-3-Clause
+License File:               COPYING-BSD-3
+Format:                     source code, header files, ml models
+Description and comments:   Software code for running machine learning models on MCU embedded devices
+Location:                   ml_state_monitor/mcu_app/common/
+Origin:                     NXP (BSD-3-clause)
 
-ml_state_monitor_cm4       Name: FRDM-K66F ML State Monitor Application      
-                           Version: 1.0.0                                    
-                           Outgoing License: BSD-3-Clause                    
-                           License File: COPYING-BSD-3                       
-                           Format: source code, header files                 
-                           Description: Software support for running the     
-                           ML State Monitor Application on FRDM-K66F         
-                           Location: ml_state_monitor/mcu_app/boards/        
-                           frdmk66f/ml_state_monitor/                        
+--------------------------------------------
 
-ml_state_monitor_cm33      Name: LPC55S69-EVK ML State Monitor Application   
-                           Version: 1.0.0                                    
-                           Outgoing License: BSD-3-Clause                    
-                           License File: COPYING-BSD-3                       
-                           Format: source code, header files                 
-                           Description: Software support for running the     
-                           ML State Monitor Application on LPC55S69-EVK      
-                           Location: ml_state_monitor/mcu_app/boards/        
-                           lpcxpresso55s69/ml_state_monitor/                 
+Package:                    MPP Time Series Preview Library
+Version:                    MPP_1.0.0_SDK_2.13.0_TS
+Outgoing License:           LA_OPT_NXP_Software_License v49 September 2023 - Additional distribution license granted - License in Section 2.3 applies
+License File:               LICENSE.txt
+Format:                     source code, header files, library
+Description and comments:   The MPP (Multimedia Processing Pipleine) preview library with time series support
+Location:                   ml_state_monitor/mcu_app/mpp/
+Origin:                     NXP
 
-ML Application             Name: ML Application                              
-                           Version: 1.1.0                                    
-                           Outgoing License: BSD-3-Clause                    
-                           License File: COPYING-BSD-3                       
-                           Format: python script, training dataset csv files,
-                           ml models, header files                           
-                           Description: Software script for running machine  
-                           learning training and generation on Host machine  
-                           Location: ml_state_monitor/ml_app/                
+--------------------------------------------
+
+Package:                    ml_state_monitor_cm7 (MIMXRT1170-EVK ML State Monitor Application)
+Version:                    1.0.0
+Outgoing License:           BSD-3-Clause
+License File:               COPYING-BSD-3
+Format:                     source code, header files
+Description and comments:   Software support for running the ML State Monitor Application on MIMXRT1170-EVK
+Location:                   ml_state_monitor/mcu_app/boards/evkmimxrt1170/ml_state_monitor/
+Origin:                     NXP (BSD-3-clause)
+
+--------------------------------------------
+
+Package:                    ml_state_monitor_mpp_cm7 (MIMXRT1170-EVK MPP ML State Monitor Application)
+Version:                    1.0.0
+Outgoing License:           BSD-3-Clause
+License File:               COPYING-BSD-3
+Format:                     source code, header files
+Description and comments:   Software support for running the ML State Monitor Application on MIMXRT1170-EVK leveraging the MPP time series library
+Location:                   ml_state_monitor/mcu_app/boards/evkmimxrt1170/ml_state_monitor_mpp/
+Origin:                     NXP (BSD-3-clause)
+
+--------------------------------------------
+
+Package:                    ml_state_monitor_cm4 (FRDM-K66F ML State Monitor Application)
+Version:                    1.0.0
+Outgoing License:           BSD-3-Clause
+License File:               COPYING-BSD-3
+Format:                     source code, header files
+Description and comments:   Software support for running the ML State Monitor Application on FRDM-K66F
+Location:                   ml_state_monitor/mcu_app/boards/frdmk66f/ml_state_monitor/
+Origin:                     NXP (BSD-3-clause)
+
+--------------------------------------------
+
+Package:                    ml_state_monitor_cm33 (LPC55S69-EVK ML State Monitor Application)
+Version:                    1.0.0
+Outgoing License:           BSD-3-Clause
+License File:               COPYING-BSD-3
+Format:                     source code, header files
+Description and comments:   Software support for running the ML State Monitor Application on LPC55S69-EVK
+Location:                   ml_state_monitor/mcu_app/boards/lpcxpresso55s69/ml_state_monitor/
+Origin:                     NXP (BSD-3-clause)
+
+--------------------------------------------
+
+Package:                    ml_state_monitor_mpp_cm33 (LPC55S69-EVK MPP ML State Monitor Application)
+Version:                    1.0.0
+Outgoing License:           BSD-3-Clause
+License File:               COPYING-BSD-3
+Format:                     source code, header files
+Description and comments:   Software support for running the ML State Monitor Application on LPC55S69-EVK leveraging the MPP time series library
+Location:                   ml_state_monitor/mcu_app/boards/lpcxpresso55s69/ml_state_monitor_mpp/
+Origin:                     NXP (BSD-3-clause)
+
+--------------------------------------------
+
+Package:                    ML Application v1
+Version:                    1.1.0
+Outgoing License:           BSD-3-Clause
+License File:               COPYING-BSD-3
+Format:                     python script, training dataset csv files, ml models, header files
+Description and comments:   Software script for running machine learning training and generation on Host machine
+Location:                   ml_state_monitor/ml_app/v1/
+Origin:                     NXP (BSD-3-clause)
+
+--------------------------------------------
+
+Package:                    ML Application v2
+Version:                    2.0.0
+Outgoing License:           BSD-3-Clause
+License File:               COPYING-BSD-3
+Format:                     python script, training dataset csv files, ml models, header files
+Description and comments:   Software script for running machine learning training and generation on Host machine  
+Location:                   ml_state_monitor/ml_app/v2/
+Origin:                     NXP (BSD-3-clause)
+
+--------------------------------------------

@@ -51,6 +51,7 @@
     <definition extID="platform.drivers.dmamux.MK66F18"/>
     <definition extID="platform.drivers.i2c_edma.MK66F18"/>
     <definition extID="platform.drivers.i2c_cmsis.MK66F18"/>
+    <definition extID="platform.drivers.i2c.MK66F18"/>
     <definition extID="platform.drivers.dspi.MK66F18"/>
     <definition extID="platform.drivers.dspi_edma.MK66F18"/>
     <definition extID="platform.drivers.dspi_cmsis.MK66F18"/>
@@ -70,6 +71,7 @@
     <definition extID="CMSIS_DSP_Library.MK66F18"/>
     <definition extID="middleware.eiq.deepviewrt.MK66F18"/>
     <definition extID="middleware.eiq.glow.MK66F18"/>
+    <definition extID="middleware.fatfs.ram.MK66F18"/>
     <definition extID="iar"/>
     <definition extID="mdk"/>
     <definition extID="mcuxpresso"/>
@@ -128,6 +130,7 @@
     platform.drivers.dmamux.MK66F18 
     platform.drivers.i2c_edma.MK66F18 
     platform.drivers.i2c_cmsis.MK66F18 
+    platform.drivers.i2c.MK66F18 
     platform.drivers.dspi.MK66F18 
     platform.drivers.dspi_edma.MK66F18 
     platform.drivers.dspi_cmsis.MK66F18 
@@ -147,6 +150,7 @@
     CMSIS_DSP_Library.MK66F18 
     middleware.eiq.deepviewrt.MK66F18 
     middleware.eiq.glow.MK66F18 
+    middleware.fatfs.ram.MK66F18 
     " 
     category="app_sw_packs/ml_state_monitor">
     <projects>

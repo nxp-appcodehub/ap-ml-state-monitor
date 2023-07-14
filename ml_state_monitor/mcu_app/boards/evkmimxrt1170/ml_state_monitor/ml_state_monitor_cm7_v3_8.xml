@@ -78,6 +78,7 @@
     <definition extID="platform.drivers.semc.MIMXRT1176"/>
     <definition extID="middleware.eiq.deepviewrt.MIMXRT1176"/>
     <definition extID="middleware.eiq.glow.MIMXRT1176"/>
+    <definition extID="middleware.fatfs.ram.MIMXRT1176"/>
     <definition extID="mdk"/>
     <definition extID="mcuxpresso"/>
     <definition extID="armgcc"/>
@@ -165,6 +166,7 @@
   platform.drivers.semc.MIMXRT1176
   middleware.eiq.deepviewrt.MIMXRT1176
   middleware.eiq.glow.MIMXRT1176
+  middleware.fatfs.ram.MIMXRT1176 
   " 
   category="app_sw_packs">
     <projects>

@@ -104,6 +104,11 @@ ${load}</script>
             <files mask="ml_state_monitor_cm7_v3_8.xml"/>
           </external>
         </example>
+        <example id="evkmimxrt1170_ml_state_monitor_mpp_cm7" name="ml_state_monitor_mpp_cm7" brief="ML State Monitor MCU Application with MPP" toolchain="mcuxpresso" compiler="compiler_gcc" category="app_sw_packs" path="examples/ml_state_monitor/mcu_app/boards/evkmimxrt1170/ml_state_monitor_mpp">
+          <external path="examples/ml_state_monitor/mcu_app/boards/evkmimxrt1170/ml_state_monitor_mpp" type="xml">
+            <files mask="ml_state_monitor_mpp_cm7_v3_8.xml"/>
+          </external>
+        </example>
       </examples>
       <debug_configurations>
         <debug_configuration id_refs="com.crt.advproject.config.exe.debug com.crt.advproject.config.exe.release">
@@ -9885,6 +9890,14 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
+    <component id="app_sw_packs.ml_state_monitor.mpp_app_config.MIMXRT1176" name="app_sw_packs/ml_state_monitor/mpp_app_config" brief="app_sw_packs/ml_state_monitor/mpp_app_config" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/mpp_app_config" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/impp_app_config" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/mpp_app_config" project_base_path="source">
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="app_config.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
     <component id="app_sw_packs.ml_state_monitor.ml_interface.MIMXRT1176" name="app_sw_packs/ml_state_monitor/ml_interface" brief="app_sw_packs/ml_state_monitor/ml_interface" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/ml_interface" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/iml_interface" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/sensor" project_base_path="source/sensor">
       <source relative_path="./" project_relative_path="./" type="c_include">
         <files mask="labels.h"/>
@@ -9915,6 +9928,17 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
+    <component id="app_sw_packs.ml_state_monitor.inference_engine_interface.glow.mpp.MIMXRT1176" name="app_sw_packs/ml_state_monitor/inference_engine_interface/glow/mpp" brief="app_sw_packs/ml_state_monitor/inference_engine_interface/glow/mpp" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/inference_engine_interface/glow/mpp" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/inference_engine_interface/glow/mpp" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/inf-eng/glow_mpp" project_base_path="source/inf-eng/glow">
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="glow_model.c"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="glow_model.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
     <component id="app_sw_packs.ml_state_monitor.inference_engine_interface.tensorflow.MIMXRT1176" name="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" brief="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/inf-eng/tensorflow" project_base_path="source/inf-eng/tensorflow">
       <source relative_path="./" project_relative_path="./" type="src">
         <files mask="get_top_n.cpp"/>
@@ -9933,9 +9957,45 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
+    <component id="app_sw_packs.ml_state_monitor.inference_engine_interface.tensorflow.mpp.MIMXRT1176" name="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow/mpp" brief="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow/mpp" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow/mpp" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow/mpp" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/inf-eng/tensorflow_mpp" project_base_path="source/inf-eng/tensorflow">
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="model_ops.cpp"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="tensorarena_config.h"/>
+        <files mask="tensorflow_model.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="app_sw_packs.ml_state_monitor.inference_engine_interface.model_postproc.mpp.MIMXRT1176" name="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow/mpp" brief="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow/mpp" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow/mpp" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/inference_engine_interface/tensorflow/mpp" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/inf-eng/tensorflow_mpp" project_base_path="source/inf-eng">
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="get_top_n.cpp"/>
+        <files mask="model_postproc.cpp"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="get_top_n.h"/>
+        <files mask="model_postproc.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
     <component id="app_sw_packs.ml_state_monitor.model_bundle.selection.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/selection" brief="app_sw_packs/ml_state_monitor/model_bundle/selection" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/selection" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/selection" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models" project_base_path="source/models">
       <source relative_path="./" project_relative_path="./" type="c_include">
         <files mask="model_selection.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.configuration.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/configuration" brief="app_sw_packs/ml_state_monitor/model_bundle/configuration" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/configuration" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/configuration" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/configuration" project_base_path="source/models">
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="model_configuration.c"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="model_configuration.h"/>
       </source>
       <include_paths>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
@@ -9977,6 +10037,82 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.glow_v2.cm33.CNN.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/CNN" brief="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/CNN" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/CNN" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/CNN" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/glow_v2/cortex_m33" project_base_path="source/models/glow">
+      <source relative_path="./" project_relative_path="./" type="binary">
+        <files mask="model_cnn.weights.bin"/>
+        <files mask="model_cnn_quant.weights.bin"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="model_cnn.o"/>
+        <files mask="model_cnn.weights.txt"/>
+        <files mask="model_cnn_quant.o"/>
+        <files mask="model_cnn_quant.weights.txt"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="model_cnn.h"/>
+        <files mask="model_cnn_quant.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.glow_v2.cm33.LCNN.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/LCNN" brief="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/LCNN" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/LCNN" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/LCNN" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/glow_v2/cortex_m33" project_base_path="source/models/glow">
+      <source relative_path="./" project_relative_path="./" type="binary">
+        <files mask="model_lcnn.weights.bin"/>
+        <files mask="model_lcnn_quant.weights.bin"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="model_lcnn.o"/>
+        <files mask="model_lcnn.weights.txt"/>
+        <files mask="model_lcnn_quant.o"/>
+        <files mask="model_lcnn_quant.weights.txt"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="model_lcnn.h"/>
+        <files mask="model_lcnn_quant.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.glow_v2.cm33.MLP.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/MLP" brief="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/MLP" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/MLP" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/MLP" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/glow_v2/cortex_m33" project_base_path="source/models/glow">
+      <source relative_path="./" project_relative_path="./" type="binary">
+        <files mask="model_mlp.weights.bin"/>
+        <files mask="model_mlp_quant.weights.bin"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="model_mlp.o"/>
+        <files mask="model_mlp.weights.txt"/>
+        <files mask="model_mlp_quant.o"/>
+        <files mask="model_mlp_quant.weights.txt"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="model_mlp.h"/>
+        <files mask="model_mlp_quant.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.glow_v2.cm33.LRESNET.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/LRESNET" brief="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/LRESNET" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/LRESNET" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/glow_v2.cm33/LRESNET" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/glow_v2/cortex_m33" project_base_path="source/models/glow">
+      <source relative_path="./" project_relative_path="./" type="binary">
+        <files mask="model_lresnet.weights.bin"/>
+        <files mask="model_lresnet_quant.weights.bin"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="model_lresnet.o"/>
+        <files mask="model_lresnet.weights.txt"/>
+        <files mask="model_lresnet_quant.o"/>
+        <files mask="model_lresnet_quant.weights.txt"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="model_lresnet.h"/>
+        <files mask="model_lresnet_quant.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
     <component id="app_sw_packs.ml_state_monitor.model_bundle.tensorflow.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" brief="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/tensorflow" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/tensorflow" project_base_path="source/models/tensorflow">
       <source relative_path="./" project_relative_path="./" type="src">
         <files mask="model_fan_clsf.cpp"/>
@@ -9985,6 +10121,58 @@ ${load}</script>
       <source relative_path="./" project_relative_path="./" type="c_include">
         <files mask="model_fan_clsf.h"/>
         <files mask="model_fan_clsf_quant.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.tensorflow_v2.CNN.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/CNN" brief="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/CNN" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/CNN" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/CNN" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/tensorflow_v2" project_base_path="source/models/tensorflow">
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="tensorflow_model_cnn.cpp"/>
+        <files mask="tensorflow_model_cnn_quant.cpp"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="tensorflow_model_cnn.h"/>
+        <files mask="tensorflow_model_cnn_quant.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.tensorflow_v2.LCNN.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/LCNN" brief="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/LCNN" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/LCNN" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/LCNN" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/tensorflow_v2" project_base_path="source/models/tensorflow">
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="tensorflow_model_lcnn.cpp"/>
+        <files mask="tensorflow_model_lcnn_quant.cpp"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="tensorflow_model_lcnn.h"/>
+        <files mask="tensorflow_model_lcnn_quant.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.tensorflow_v2.MLP.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/MLP" brief="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/MLP" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/MLP" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/MLP" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/tensorflow_v2" project_base_path="source/models/tensorflow">
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="tensorflow_model_mlp.cpp"/>
+        <files mask="tensorflow_model_mlp_quant.cpp"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="tensorflow_model_mlp.h"/>
+        <files mask="tensorflow_model_mlp_quant.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="app_sw_packs.ml_state_monitor.model_bundle.tensorflow_v2.LRESNET.MIMXRT1176" name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/LRESNET" brief="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/LRESNET" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/LRESNET" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/model_bundle/tensorflow_v2/LRESNET" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/tensorflow_v2" project_base_path="source/models/tensorflow">
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="tensorflow_model_lresnet.cpp"/>
+        <files mask="tensorflow_model_lresnet_quant.cpp"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="tensorflow_model_lresnet.h"/>
+        <files mask="tensorflow_model_lresnet_quant.h"/>
       </source>
       <include_paths>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
@@ -10001,6 +10189,18 @@ ${load}</script>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
       </include_paths>
     </component>
+    <component id="app_sw_packs.ml_state_monitor.validation_data.mpp.MIMXRT1176" name="app_sw_packs/ml_state_monitor/validation_data/mpp" brief="app_sw_packs/ml_state_monitor/validation_data/mpp" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/validation_data/mpp" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/validation_data/mpp" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/models/validation_data/mpp" project_base_path="source/models/validation_data">
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="vdset.h"/>
+        <files mask="vdset_clog.h"/>
+        <files mask="vdset_friction.h"/>
+        <files mask="vdset_off.h"/>
+        <files mask="vdset_on.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
     <component id="app_sw_packs.ml_state_monitor.sdcard_capture.MIMXRT1176" name="app_sw_packs/ml_state_monitor/sdcard_capture" brief="app_sw_packs/ml_state_monitor/sdcard_capture" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/sdcard_capture" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/sdcard_capture" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/sdcard" project_base_path="source/sdcard">
       <source relative_path="./" project_relative_path="./" type="src">
         <files mask="sdcard_capture.c"/>
@@ -10011,6 +10211,116 @@ ${load}</script>
       </source>
       <include_paths>
         <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="app_sw_packs.ml_state_monitor.mpp_capture.MIMXRT1176" name="app_sw_packs/ml_state_monitor/mpp_capture" brief="app_sw_packs/ml_state_monitor/mpp_capture" version="1.0.0" full_name="app_sw_packs/ml_state_monitor/mpp_capture" devices="MIMXRT1176xxxxx" category="app_sw_packs/ml_state_monitor/mpp_capture" user_visible="true" type="other" package_base_path="examples/ml_state_monitor/mcu_app/common/mpp_capture" project_base_path="source/sdcard">
+      <source relative_path="./" project_relative_path="./" type="src">
+        <files mask="capture.c"/>
+        <files mask="sdcard_capture.c"/>
+      </source>
+      <source relative_path="./" project_relative_path="./" type="c_include">
+        <files mask="capture.h"/>
+        <files mask="sdcard_capture.h"/>
+        <files mask="ffconf.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="middleware.issdk.sensor.fxls8974cf.MIMXRT1176" name="issdk_fxls8974cf" brief="ISSDK FXLS8974CF Sensor Driver Files" version="1.8.0" full_name="Middleware issdk sensor FXLS8974CF" devices="MIMXRT1176xxxxx" user_visible="true" type="middleware" package_base_path="core/middleware/issdk" project_base_path="sensors">
+      <dependencies>
+        <all>
+          <component_dependency value="CMSIS_Driver_Include.I2C.MIMXRT1176"/>
+          <component_dependency value="CMSIS_Driver_Include.SPI.MIMXRT1176"/>
+        </all>
+      </dependencies>
+      <source relative_path="sensors" project_relative_path="./" type="c_include">
+        <files mask="fxls8974.h"/>
+        <files mask="fxls8974_drv.h"/>
+      </source>
+      <source relative_path="sensors" project_relative_path="./" type="src">
+        <files mask="fxls8974_drv.c"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="sensors" project_relative_path="./" type="c_include"/>
+      </include_paths>
+    </component>
+    <component id="middleware.eiq.mpp.MIMXRT1176" name="MPP library" brief="Multimedia Processing Pipelines Library" version="0.9.0" full_name="Multimedia Processing Pipelines Library" devices="MIMXRT1176xxxxx" category="Machine Learning/eIQ" user_visible="false" type="middleware" package_base_path="examples/ml_state_monitor/mcu_app" project_base_path="eiq">
+      <dependencies>
+        <all>
+          <component_dependency value="middleware.freertos-kernel.MIMXRT1176"/>
+          <component_dependency value="middleware.freertos-kernel.heap_4.MIMXRT1176"/>
+          <component_dependency value="middleware.eiq.tensorflow_lite_micro.MIMXRT1176"/>
+        </all>
+      </dependencies>
+      <source relative_path="./mpp/include" project_relative_path="mpp/include" type="c_include">
+        <files mask="mpp_api.h"/>
+        <files mask="mpp_api_types.h"/>
+        <files mask="mpp_config.h"/>
+      </source>
+      <source relative_path="./mpp/hal/include" project_relative_path="mpp/hal/include" type="c_include">
+        <files mask="hal_accelerometer_dev.h"/>
+        <files mask="hal_sd_log_dev.h"/>
+        <files mask="hal_static_accelerometer_data.h"/>
+        <!-- -->
+        <files mask="font.h"/>
+        <files mask="hal.h"/>
+        <files mask="hal_camera_dev.h"/>
+        <files mask="hal_chgui.h"/>
+        <files mask="hal_debug.h"/>
+        <files mask="hal_display_dev.h"/>
+        <files mask="hal_draw.h"/>
+        <files mask="hal_freertos.h"/>
+        <files mask="hal_graphics_dev.h"/>
+        <files mask="hal_os.h"/>
+        <files mask="hal_static_image.h"/>
+        <files mask="hal_types.h"/>
+        <files mask="hal_utils.h"/>
+        <files mask="hal_valgo_dev.h"/>
+      </source>
+      <source relative_path="./mpp/hal/tflite" project_relative_path="mpp/hal/tflite" type="c_include">
+        <files mask="model.h"/>
+      </source>
+      <source relative_path="./mpp/hal/glow" project_relative_path="mpp/hal/glow" type="c_include">
+        <files mask="model.h"/>
+      </source>
+      <source toolchain="mcuxpresso armgcc" relative_path="./mpp/lib/imxrt1170" project_relative_path="mpp/lib/" type="lib">
+        <files mask="libmpp.a"/>
+      </source>
+      <source relative_path="./mpp/hal" project_relative_path="mpp/hal/" type="src">
+        <files mask="hal_accelerometre_fxls8974.c"/>
+        <files mask="hal_evkmimxrt1170.c"/>
+        <files mask="hal_sd_collect_data.c"/>
+        <files mask="hal_static_accelerometer_data.c"/>
+        <!--<files mask="hal_camera_mipi_ov5640.c"/>-->
+        <!--<files mask="hal_display_lcdifv2_rk055ahd091.c"/>-->
+        <files mask="hal_draw.c"/>
+        <!--<files mask="hal_evkmimxrt1170.c"/>-->
+        <files mask="hal_freertos.c"/>
+        <!--<files mask="hal_graphics_pxp.c"/>-->
+        <files mask="hal_static_image.c"/>
+        <files mask="hal_utils.c"/>
+        <files mask="hal_vision_algo_tflite.c"/>
+        <files mask="hal_vision_algo_glow.c"/>
+      </source>
+      <source relative_path="./mpp/hal/tflite" project_relative_path="mpp/hal/tflite" type="src">
+        <files mask="model.cpp"/>
+        <files mask="model_all_ops_micro.cpp"/>
+      </source>
+      <source relative_path="./mpp/hal/glow" project_relative_path="mpp/hal/glow" type="src">
+        <files mask="model.cpp"/>
+      </source>
+      <source relative_path="./mpp" project_relative_path="mpp/lib/" type="doc">
+        <files mask="LA_OPT_NXP_Software_License.txt"/>
+      </source>
+      <!--
+      <source toolchain="armgcc" relative_path="./" project_relative_path="." type="workspace">
+        <files mask="middleware_eiq_mpp_MIMXRT1176_cm7.cmake" hidden="true"/>
+      </source>
+      -->
+      <include_paths>
+        <include_path relative_path="./mpp/include" project_relative_path="mpp/include" type="c_include"/>
+        <include_path relative_path="./mpp/hal/include" project_relative_path="mpp/hal/include" type="c_include"/>
       </include_paths>
     </component>
   </components>

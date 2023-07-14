@@ -27,6 +27,8 @@
     <definition extID="middleware.freertos-kernel.LPC55S69"/>
     <definition extID="middleware.freertos-kernel.cm33_nonsecure_port.LPC55S69"/>
     <definition extID="middleware.freertos-kernel.heap_4.LPC55S69"/>
+    <definition extID="middleware.fatfs.ram.LPC55S69"/>
+    <definition extID="middleware.sdmmc.host.sdif.freertos.LPC55S69"/>
     <definition extID="middleware.sdmmc.sd.LPC55S69"/>
     <definition extID="middleware.sdmmc.common.LPC55S69"/>
     <definition extID="middleware.sdmmc.osa.freertos.LPC55S69"/>
@@ -118,6 +120,8 @@
   app_sw_packs.ml_state_monitor.sdcard_capture.LPC55S69 
   middleware.freertos-kernel.cm33_nonsecure_port.LPC55S69 
   middleware.freertos-kernel.heap_4.LPC55S69 
+  middleware.fatfs.ram.LPC55S69 
+  middleware.sdmmc.host.sdif.freertos.LPC55S69 
   middleware.sdmmc.osa.freertos.LPC55S69
   component.osa_free_rtos.LPC55S69
   middleware.sdmmc.sd.LPC55S69

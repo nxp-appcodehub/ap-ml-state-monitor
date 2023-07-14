@@ -1,0 +1,41 @@
+/*
+ * Copyright 2023 NXP
+ * All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+#ifndef MODELS_TFLITE_MODEL_TENSORARENA_CONFIG_H_
+#define MODELS_TFLITE_MODEL_TENSORARENA_CONFIG_H_
+
+#include "model_configuration.h"
+
+/* The size of Tensor Arena buffer for TensorFlowLite-Micro */
+#ifndef HAL_TFLM_TENSOR_ARENA_SIZE_B
+
+/* Minimum required arena size for models */
+#if MODEL_QUANTIZED
+#if (SELECTED_MODEL == MODEL_CNN)
+#define HAL_TFLM_TENSOR_ARENA_SIZE_B 3680
+#elif (SELECTED_MODEL == MODEL_LCNN)
+#define HAL_TFLM_TENSOR_ARENA_SIZE_B 3136
+#elif (SELECTED_MODEL == MODEL_MLP)
+#define HAL_TFLM_TENSOR_ARENA_SIZE_B 2752
+#elif (SELECTED_MODEL == MODEL_LRESNET)
+#define HAL_TFLM_TENSOR_ARENA_SIZE_B 9056
+#endif
+#else
+#if (SELECTED_MODEL == MODEL_CNN)
+#define HAL_TFLM_TENSOR_ARENA_SIZE_B 9152
+#elif (SELECTED_MODEL == MODEL_LCNN)
+#define HAL_TFLM_TENSOR_ARENA_SIZE_B 6496
+#elif (SELECTED_MODEL == MODEL_MLP)
+#define HAL_TFLM_TENSOR_ARENA_SIZE_B 3760
+#elif (SELECTED_MODEL == MODEL_LRESNET)
+#define HAL_TFLM_TENSOR_ARENA_SIZE_B 26704
+#endif
+#endif
+
+#endif // HAL_TFLM_TENSOR_ARENA_SIZE_B
+
+#endif /* MODELS_TFLITE_MODEL_TENSORARENA_CONFIG_H_ */
