@@ -63,7 +63,7 @@ To configure the hardware settings please refer to the [Lab Guide](https://commu
 ## 4. Results<a name="step4"></a>
 This Application Software Pack provides support to develop and deploy neural networks on MCU-based systems for time-series data. It illustrates how to build and deploy on embedded devices neural network models capable to monitor the input sensor data and detect the state of a device.
 
-Please refer to [AN13562](https://www.nxp.com/webapp/Download?colCode=AN13562) document which demonstrates through a real use case the steps required to produce and assemble a dataset, define the architecture of a neural network, train, and deploy a model on an embedded board by leveraging the NXP’s SDK and the eIQ technology.
+Please refer to [AN13562](https://www.nxp.com/docs/en/application-note/AN13562.pdf) document which demonstrates through a real use case the steps required to produce and assemble a dataset, define the architecture of a neural network, train, and deploy a model on an embedded board by leveraging the NXP’s SDK and the eIQ technology.
 This document also shows which metrics to use and how to evaluate the behavior of a neural network model at runtime on an embedded board, as well as benchmarks and performance results.
 
 ## 5. Support<a name="step5"></a>
@@ -71,7 +71,7 @@ Please refer to the following resources list for extended support:
 - ML-Based System State Monitor [Website](https://www.nxp.com/design/software/embedded-software/application-software-packs/application-software-pack-ml-based-system-state-monitor:APP-SW-PACK-ML-STATE-MONITOR)
 - ML-Based System State Monitor [Resources](https://community.nxp.com/t5/eIQ-Machine-Learning-Software/Application-Software-Pack-ML-State-Monitor/ta-p/1413290)
 - ML-based System State Monitor [Lab Guide](https://community.nxp.com/t5/eIQ-Machine-Learning-Software/Application-Software-Pack-ML-State-Monitor/ta-p/1413290?attachment-id=153366)
-- [AN13562](https://www.nxp.com/webapp/Download?colCode=AN13562) - Building and Benchmarking Deep Learning Models for Smart Sensing Appliances on MCUs
+- [AN13562](https://www.nxp.com/docs/en/application-note/AN13562.pdf) - Building and Benchmarking Deep Learning Models for Smart Sensing Appliances on MCUs
 - [Application Software Packs](https://www.nxp.com/appswpack) - full portfolio of rapid-development easy-to-use software bundles
 - [MCUXpresso SDK](https://github.com/NXPmicro/mcux-sdk/) - full SDK delivery that provides access to other SDK examples and components
 - [eIQ ML Software Development Environment](https://www.nxp.com/eIQ) - access to the ML workflow tools like eIQ Toolkit, along with inference engines, neural network compilers and optimized libraries
