@@ -1,4 +1,4 @@
-<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" id="ap-ml-state-monitor" type="sw_pack" format="zephyr" name="ML State Monitor">
+<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" id="ap-ml-state-monitor" type="sw_pack" format="projectfile" name="ML State Monitor">
     <overview>
         <![CDATA[<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;">This repository holds the ML-Based System State  Monitor App SW Pack and depends on the MCUXpresso SDK overall delivery. This Application Software Pack relies on the Deep Learning (DL) subfield of ML and enables developers to develop and deploy neural networks on MCU-based systems for building smart sensing and state monitoring solutions.</span>]]>
     </overview>
