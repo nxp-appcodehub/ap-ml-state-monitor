@@ -1,5 +1,5 @@
 /*
- * Copyright 2021-2023 NXP
+ * Copyright 2021-2024 NXP
  * All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
@@ -19,13 +19,13 @@
 #include "tensorflow/lite/micro/kernels/softmax.h"
 #include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
 
-tflite::MicroOpResolver &MODEL_GetOpsResolver(tflite::ErrorReporter* errorReporter)
+tflite::MicroOpResolver &MODEL_GetOpsResolver()
 {
 #if MODEL_QUANTIZED
 	//Model-select
 #if SELECTED_MODEL == MODEL_LRESNET
 
-    static tflite::MicroMutableOpResolver<10> s_microOpResolver(errorReporter);
+    static tflite::MicroMutableOpResolver<10> s_microOpResolver;
 
     s_microOpResolver.AddQuantize();
     s_microOpResolver.AddMul();
@@ -40,7 +40,7 @@ tflite::MicroOpResolver &MODEL_GetOpsResolver(tflite::ErrorReporter* errorReport
 
 #elif SELECTED_MODEL == MODEL_MLP
 
-    static tflite::MicroMutableOpResolver<5> s_microOpResolver(errorReporter);
+    static tflite::MicroMutableOpResolver<5> s_microOpResolver;
 
     s_microOpResolver.AddQuantize();
     s_microOpResolver.AddReshape();
@@ -50,7 +50,7 @@ tflite::MicroOpResolver &MODEL_GetOpsResolver(tflite::ErrorReporter* errorReport
 
 #elif SELECTED_MODEL == MODEL_LCNN
 
-    static tflite::MicroMutableOpResolver<7> s_microOpResolver(errorReporter);
+    static tflite::MicroMutableOpResolver<7> s_microOpResolver;
 
     s_microOpResolver.AddQuantize();
     s_microOpResolver.AddConv2D();
@@ -62,7 +62,7 @@ tflite::MicroOpResolver &MODEL_GetOpsResolver(tflite::ErrorReporter* errorReport
 
 #elif SELECTED_MODEL == MODEL_CNN
 
-    static tflite::MicroMutableOpResolver<7> s_microOpResolver(errorReporter);
+    static tflite::MicroMutableOpResolver<7> s_microOpResolver;
 
     s_microOpResolver.AddQuantize();
     s_microOpResolver.AddConv2D();
@@ -77,7 +77,7 @@ tflite::MicroOpResolver &MODEL_GetOpsResolver(tflite::ErrorReporter* errorReport
 #else //MODEL_QUANTIZED
 #if SELECTED_MODEL == MODEL_LRESNET  //Model-select
 
-    static tflite::MicroMutableOpResolver<8> s_microOpResolver(errorReporter);
+    static tflite::MicroMutableOpResolver<8> s_microOpResolver;
 
     s_microOpResolver.AddMul();
     s_microOpResolver.AddAdd();
@@ -90,7 +90,7 @@ tflite::MicroOpResolver &MODEL_GetOpsResolver(tflite::ErrorReporter* errorReport
 
 #elif SELECTED_MODEL == MODEL_MLP
 
-    static tflite::MicroMutableOpResolver<3> s_microOpResolver(errorReporter);
+    static tflite::MicroMutableOpResolver<3> s_microOpResolver;
 
     s_microOpResolver.AddReshape();
     s_microOpResolver.AddFullyConnected();
@@ -98,7 +98,7 @@ tflite::MicroOpResolver &MODEL_GetOpsResolver(tflite::ErrorReporter* errorReport
 
 #elif SELECTED_MODEL == MODEL_LCNN
 
-    static tflite::MicroMutableOpResolver<5> s_microOpResolver(errorReporter);
+    static tflite::MicroMutableOpResolver<5> s_microOpResolver;
 
     s_microOpResolver.AddConv2D();
     s_microOpResolver.AddMaxPool2D();
@@ -108,7 +108,7 @@ tflite::MicroOpResolver &MODEL_GetOpsResolver(tflite::ErrorReporter* errorReport
 
 #elif SELECTED_MODEL == MODEL_CNN
 
-    static tflite::MicroMutableOpResolver<5> s_microOpResolver(errorReporter);
+    static tflite::MicroMutableOpResolver<5> s_microOpResolver;
 
     s_microOpResolver.AddConv2D();
     s_microOpResolver.AddMaxPool2D();

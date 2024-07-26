@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ksdk:examples xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd manifest.xsd">
+  <externalDefinitions>
+    <definition extID="cm33_core0_MCXN947"/>
+    <definition extID="CMSIS_Driver_Include.I2C.MCXN947"/>
+    <definition extID="CMSIS_Driver_Include.SPI.MCXN947"/>
+    <definition extID="CMSIS_Driver_Include.USART.MCXN947"/>
+    <definition extID="CMSIS_Include_core_cm.MCXN947"/>
+    <definition extID="RTE_Device.MCXN947"/>
+    <definition extID="app_sw_packs.ml_state_monitor.inference_engine_interface.tensorflow.MCXN947"/>
+    <definition extID="app_sw_packs.ml_state_monitor.ml_interface.MCXN947"/>
+    <definition extID="app_sw_packs.ml_state_monitor.model_bundle.configuration.MCXN947"/>
+    <definition extID="app_sw_packs.ml_state_monitor.model_bundle.tensorflow_v2.CNN.MCXN947"/>
+    <definition extID="app_sw_packs.ml_state_monitor.model_bundle.tensorflow_v2_mcxn94x_neutron_v120.CNN.MCXN947"/>
+    <definition extID="app_sw_packs.ml_state_monitor.sdcard_capture.MCXN947"/>
+    <definition extID="app_sw_packs.ml_state_monitor.sensor.MCXN947"/>
+    <definition extID="app_sw_packs.ml_state_monitor.validation_data.MCXN947"/>
+    <definition extID="component.gpio_adapter.MCXN947"/>
+    <definition extID="component.lists.MCXN947"/>
+    <definition extID="component.lpuart_adapter.MCXN947"/>
+    <definition extID="component.osa_free_rtos.MCXN947"/>
+    <definition extID="component.osa_interface.MCXN947"/>
+    <definition extID="component.serial_manager.MCXN947"/>
+    <definition extID="component.serial_manager_uart.MCXN947"/>
+    <definition extID="middleware.eiq.tensorflow_lite_micro.binary.MCXN947"/>
+    <definition extID="middleware.eiq.tensorflow_lite_micro.neutron.MCXN947"/>
+    <definition extID="middleware.eiq.tensorflow_lite_micro.headers.MCXN947"/>
+    <definition extID="middleware.eiq.tensorflow_lite_micro.third_party.flatbuffers.MCXN947"/>
+    <definition extID="middleware.eiq.tensorflow_lite_micro.third_party.ruy.MCXN947"/>
+    <definition extID="middleware.eiq.tensorflow_lite_micro.third_party.gemmlowp.MCXN947"/>
+    <definition extID="middleware.eiq.tensorflow_lite_micro.third_party.neutron_lib.binary.MCXN947"/>
+    <definition extID="middleware.fatfs.MCXN947"/>
+    <definition extID="middleware.fatfs.ram.MCXN947"/>
+    <definition extID="middleware.fatfs.sd.MCXN947"/>
+    <definition extID="middleware.fatfs.template_sd.MCXN947"/>
+    <definition extID="middleware.freertos-kernel.MCXN947"/>
+    <definition extID="middleware.freertos-kernel.cm33_non_trustzone.MCXN947"/>
+    <definition extID="middleware.freertos-kernel.extension.MCXN947"/>
+    <definition extID="middleware.freertos-kernel.heap_4.MCXN947"/>
+    <definition extID="middleware.issdk.drivers.gpio_mcx.MCXN947"/>
+    <definition extID="middleware.issdk.drivers.systick_utils.MCXN947"/>
+    <definition extID="middleware.issdk.sensor.fxls8974cf.MCXN947"/>
+    <definition extID="middleware.issdk.sensor.interface.common.MCXN947"/>
+    <definition extID="middleware.sdmmc.common.MCXN947"/>
+    <definition extID="middleware.sdmmc.host.usdhc.MCXN947"/>
+    <definition extID="middleware.sdmmc.host.usdhc.cache.MCXN947"/>
+    <definition extID="middleware.sdmmc.host.usdhc.interrupt.MCXN947"/>
+    <definition extID="middleware.sdmmc.osa.freertos.MCXN947"/>
+    <definition extID="middleware.sdmmc.sd.MCXN947"/>
+    <definition extID="platform.devices.MCXN947_CMSIS.MCXN947"/>
+    <definition extID="platform.devices.MCXN947_startup.MCXN947"/>
+    <definition extID="platform.devices.MCXN947_system.MCXN947"/>
+    <definition extID="platform.drivers.clock.MCXN947"/>
+    <definition extID="platform.drivers.common.MCXN947"/>
+    <definition extID="platform.drivers.ctimer.MCXN947"/>
+    <definition extID="platform.drivers.edma4.MCXN947"/>
+    <definition extID="platform.drivers.edma_soc.MCXN947"/>
+    <definition extID="platform.drivers.gpio.MCXN947"/>
+    <definition extID="platform.drivers.inputmux.MCXN947"/>
+    <definition extID="platform.drivers.inputmux_connections.MCXN947"/>
+    <definition extID="platform.drivers.lpadc.MCXN947"/>
+    <definition extID="platform.drivers.lpflexcomm.MCXN947"/>
+    <definition extID="platform.drivers.lpflexcomm_lpi2c.MCXN947"/>
+    <definition extID="platform.drivers.lpflexcomm_lpi2c_edma.MCXN947"/>
+    <definition extID="platform.drivers.lpflexcomm_lpspi.MCXN947"/>
+    <definition extID="platform.drivers.lpflexcomm_lpspi_edma.MCXN947"/>
+    <definition extID="platform.drivers.lpflexcomm_lpuart.MCXN947"/>
+    <definition extID="platform.drivers.lpflexcomm_lpuart_edma.MCXN947"/>
+    <definition extID="platform.drivers.lpi2c_cmsis.MCXN947"/>
+    <definition extID="platform.drivers.lpspi_cmsis.MCXN947"/>
+    <definition extID="platform.drivers.lpuart_cmsis.MCXN947"/>
+    <definition extID="platform.drivers.mailbox.MCXN947"/>
+    <definition extID="platform.drivers.mcx_spc.MCXN947"/>
+    <definition extID="platform.drivers.mrt.MCXN947"/>
+    <definition extID="platform.drivers.ostimer.MCXN947"/>
+    <definition extID="platform.drivers.pint.MCXN947"/>
+    <definition extID="platform.drivers.plu.MCXN947"/>
+    <definition extID="platform.drivers.port.MCXN947"/>
+    <definition extID="platform.drivers.power.MCXN947"/>
+    <definition extID="platform.drivers.reset.MCXN947"/>
+    <definition extID="platform.drivers.sctimer.MCXN947"/>
+    <definition extID="platform.drivers.usdhc.MCXN947"/>
+    <definition extID="platform.drivers.utick.MCXN947"/>
+    <definition extID="platform.drivers.wwdt.MCXN947"/>
+    <definition extID="platform.utilities.assert.MCXN947"/>
+    <definition extID="platform.utilities.assert_lite.MCXN947"/>
+    <definition extID="platform.utilities.misc_utilities.MCXN947"/>
+    <definition extID="utility.debug_console.MCXN947"/>
+    <definition extID="armgcc"/>
+    <definition extID="mcuxpresso"/>
+    <definition extID="com.nxp.mcuxpresso"/>
+  </externalDefinitions>
+  <example id="frdmmcxn947_ml_state_monitor" name="ml_state_monitor" device_core="cm33_core0_MCXN947"
+  dependency="
+  CMSIS_Driver_Include.I2C.MCXN947 
+  CMSIS_Driver_Include.SPI.MCXN947 
+  CMSIS_Driver_Include.USART.MCXN947 
+  CMSIS_Include_core_cm.MCXN947 
+  RTE_Device.MCXN947 
+  app_sw_packs.ml_state_monitor.inference_engine_interface.tensorflow.MCXN947 
+  app_sw_packs.ml_state_monitor.ml_interface.MCXN947 
+  app_sw_packs.ml_state_monitor.model_bundle.configuration.MCXN947 
+  app_sw_packs.ml_state_monitor.model_bundle.tensorflow_v2.CNN.MCXN947 
+  app_sw_packs.ml_state_monitor.model_bundle.tensorflow_v2_mcxn94x_neutron_v120.CNN.MCXN947 
+  app_sw_packs.ml_state_monitor.sdcard_capture.MCXN947 
+  app_sw_packs.ml_state_monitor.sensor.MCXN947 
+  app_sw_packs.ml_state_monitor.validation_data.MCXN947 
+  component.gpio_adapter.MCXN947 
+  component.lists.MCXN947 
+  component.lpuart_adapter.MCXN947 
+  component.osa_free_rtos.MCXN947 
+  component.osa_interface.MCXN947 
+  component.serial_manager.MCXN947 
+  component.serial_manager_uart.MCXN947 
+  middleware.eiq.tensorflow_lite_micro.binary.MCXN947 
+  middleware.eiq.tensorflow_lite_micro.neutron.MCXN947 
+  middleware.eiq.tensorflow_lite_micro.headers.MCXN947 
+  middleware.eiq.tensorflow_lite_micro.third_party.flatbuffers.MCXN947 
+  middleware.eiq.tensorflow_lite_micro.third_party.ruy.MCXN947 
+  middleware.eiq.tensorflow_lite_micro.third_party.gemmlowp.MCXN947 
+  middleware.eiq.tensorflow_lite_micro.third_party.neutron_lib.binary.MCXN947 
+  middleware.fatfs.MCXN947 
+  middleware.fatfs.ram.MCXN947 
+  middleware.fatfs.sd.MCXN947 
+  middleware.fatfs.template_sd.MCXN947 
+  middleware.freertos-kernel.MCXN947 
+  middleware.freertos-kernel.cm33_non_trustzone.MCXN947 
+  middleware.freertos-kernel.extension.MCXN947 
+  middleware.freertos-kernel.heap_4.MCXN947 
+  middleware.issdk.drivers.gpio_mcx.MCXN947 
+  middleware.issdk.drivers.systick_utils.MCXN947 
+  middleware.issdk.sensor.fxls8974cf.MCXN947 
+  middleware.issdk.sensor.interface.common.MCXN947 
+  middleware.sdmmc.common.MCXN947 
+  middleware.sdmmc.host.usdhc.MCXN947 
+  middleware.sdmmc.host.usdhc.cache.MCXN947 
+  middleware.sdmmc.host.usdhc.interrupt.MCXN947 
+  middleware.sdmmc.osa.freertos.MCXN947 
+  middleware.sdmmc.sd.MCXN947 
+  platform.devices.MCXN947_CMSIS.MCXN947 
+  platform.devices.MCXN947_startup.MCXN947 
+  platform.devices.MCXN947_system.MCXN947 
+  platform.drivers.clock.MCXN947 
+  platform.drivers.common.MCXN947 
+  platform.drivers.ctimer.MCXN947 
+  platform.drivers.edma4.MCXN947 
+  platform.drivers.edma_soc.MCXN947 
+  platform.drivers.gpio.MCXN947 
+  platform.drivers.inputmux.MCXN947 
+  platform.drivers.inputmux_connections.MCXN947 
+  platform.drivers.lpadc.MCXN947 
+  platform.drivers.lpflexcomm.MCXN947 
+  platform.drivers.lpflexcomm_lpi2c.MCXN947 
+  platform.drivers.lpflexcomm_lpi2c_edma.MCXN947 
+  platform.drivers.lpflexcomm_lpspi.MCXN947 
+  platform.drivers.lpflexcomm_lpspi_edma.MCXN947 
+  platform.drivers.lpflexcomm_lpuart.MCXN947 
+  platform.drivers.lpflexcomm_lpuart_edma.MCXN947 
+  platform.drivers.lpi2c_cmsis.MCXN947 
+  platform.drivers.lpspi_cmsis.MCXN947 
+  platform.drivers.lpuart_cmsis.MCXN947 
+  platform.drivers.mailbox.MCXN947 
+  platform.drivers.mcx_spc.MCXN947 
+  platform.drivers.mrt.MCXN947 
+  platform.drivers.ostimer.MCXN947 
+  platform.drivers.pint.MCXN947 
+  platform.drivers.plu.MCXN947 
+  platform.drivers.port.MCXN947 
+  platform.drivers.power.MCXN947 
+  platform.drivers.reset.MCXN947 
+  platform.drivers.sctimer.MCXN947 
+  platform.drivers.usdhc.MCXN947 
+  platform.drivers.utick.MCXN947 
+  platform.drivers.wwdt.MCXN947 
+  platform.utilities.assert.MCXN947 
+  platform.utilities.assert_lite.MCXN947 
+  platform.utilities.misc_utilities.MCXN947 
+  utility.debug_console.MCXN947 
+  " category="app_sw_packs">
+    <projects>
+      <project type="com.crt.advproject.projecttype.exe" nature="org.eclipse.cdt.core.ccnature"/>
+    </projects>
+    <toolchainSettings>
+      <toolchainSetting id_refs="com.nxp.mcuxpresso">
+        <option id="com.crt.advproject.gcc.exe.release.option.optimization.level" type="enum">
+          <value>gnu.c.optimization.level.most</value>
+        </option>
+        <option id="com.crt.advproject.gcc.fpu" type="enum">
+          <value>com.crt.advproject.gcc.fpu.fpv5sp.hard</value>
+        </option>
+        <option id="gnu.c.compiler.option.optimization.flags" type="string">
+          <value>-fno-common</value>
+        </option>
+        <option id="com.crt.advproject.c.misc.dialect" type="enum">
+          <value>com.crt.advproject.misc.dialect.gnu99</value>
+        </option>
+        <option id="gnu.c.compiler.option.misc.other" type="string">
+          <value>-Wno-strict-aliasing -mcpu=cortex-m33 -c -ffunction-sections -fdata-sections</value>
+        </option>
+        <option id="com.crt.advproject.cpp.exe.release.option.optimization.level" type="enum">
+          <value>gnu.cpp.compiler.optimization.level.most</value>
+        </option>
+        <option id="com.crt.advproject.cpp.fpu" type="enum">
+          <value>com.crt.advproject.cpp.fpu.fpv5sp.hard</value>
+        </option>
+        <option id="gnu.cpp.compiler.option.optimization.flags" type="string">
+          <value>-fno-common</value>
+        </option>
+        <option id="com.crt.advproject.cpp.misc.dialect" type="enum">
+          <value>com.crt.advproject.misc.dialect.gnupp11</value>
+        </option>
+        <option id="gnu.cpp.compiler.option.other.other" type="string">
+          <value>-fno-rtti -fno-exceptions -Wno-sign-compare -Wno-strict-aliasing -Wno-deprecated-declarations -mcpu=cortex-m33 -c -ffunction-sections -fdata-sections</value>
+        </option>
+        <option id="gnu.cpp.compiler.option.warnings.toerrors" type="boolean">
+          <value>false</value>
+        </option>
+        <option id="gnu.c.compiler.option.preprocessor.def.symbols" type="stringList">
+          <value>CPU_MCXN947VDF_cm33_core0</value>
+          <value>SDK_DEBUGCONSOLE_UART</value>
+          <value>ARM_MATH_CM33</value>
+          <value>__FPU_PRESENT=1</value>
+          <value>TF_LITE_STATIC_MEMORY</value>
+          <value>MCUXPRESSO_SDK</value>
+          <value>SDK_I2C_BASED_COMPONENT_USED=1</value>
+          <value>CMSIS_NN</value>
+          <value>SERIAL_PORT_TYPE_UART=1</value>
+          <value>DEBUG_CONSOLE_TRANSFER_NON_BLOCKING</value>
+          <value>DEBUG_CONSOLE_ENABLE_ECHO</value>
+          <value>SDK_OS_FREE_RTOS</value>
+          <value>CR_INTEGER_PRINTF</value>
+          <value>SD_ENABLED</value>
+          <value>PRINTF_FLOAT_ENABLE=1</value> 
+        </option>       
+        <option id="gnu.cpp.compiler.option.preprocessor.def" type="stringList">
+          <value>SDK_DEBUGCONSOLE_UART</value>
+          <value>ARM_MATH_CM33</value>
+          <value>__FPU_PRESENT=1</value>
+          <value>CPU_MCXN947VDF_cm33_core0</value>
+          <value>TF_LITE_STATIC_MEMORY</value>
+          <value>MCUXPRESSO_SDK</value>
+          <value>SDK_I2C_BASED_COMPONENT_USED=1</value>
+          <value>CMSIS_NN</value>
+          <value>SERIAL_PORT_TYPE_UART=1</value>
+          <value>DEBUG_CONSOLE_TRANSFER_NON_BLOCKING</value>
+        </option>
+        <option id="com.crt.advproject.link.cpp.fpu" type="enum">
+          <value>com.crt.advproject.link.cpp.fpu.fpv5sp.hard</value>
+        </option>
+        <option id="gnu.cpp.link.option.nostdlibs" type="boolean">
+          <value>true</value>
+        </option>
+        <option id="com.crt.advproject.link.memory.sections.cpp" type="stringList">
+          <value>isd=*(.model);region=Flash2;type=.rodata</value>
+        </option>
+        <option id="com.crt.advproject.link.memory.heapAndStack.cpp" type="string">
+          <value>&amp;Heap:Default;Default;Default&amp;Stack:SRAM;End;0x2000</value>
+        </option>
+        <option id="gnu.cpp.link.option.other" type="stringList">
+          <value>-no-warn-rwx-segments</value>
+        </option>
+        <option id="com.crt.advproject.gas.fpu" type="enum">
+          <value>com.crt.advproject.gas.fpu.fpv5sp.hard</value>
+        </option>
+        <option id="com.crt.advproject.link.cpp.nanofloat" type="boolean">
+            <value>true</value>
+        </option>    
+      </toolchainSetting>
+    </toolchainSettings>
+    <include_paths>
+      <include_path path="../../../../../../core/boards/frdmmcxn947" project_relative_path="board" type="c_include"/>
+      <include_path path="examples/ml_state_monitor/mcu_app/boards/frdmmcxn947/ml_state_monitor" project_relative_path="source" type="c_include"/>
+    </include_paths>
+    <source path="../../../../../../core/boards/frdmmcxn947" project_relative_path="board" type="src">
+      <files mask="board.c"/>
+      <files mask="clock_config.c"/>
+    </source>
+    <source path="../../../../../../core/boards/frdmmcxn947" project_relative_path="board" type="c_include">
+      <files mask="board.h"/>
+      <files mask="clock_config.h"/>
+    </source>
+    <source path="." project_relative_path="board" type="src">
+      <files mask="pin_mux.c"/>
+      <files mask="frdmmcxn947.c"/>
+      <files mask="sdmmc_config.c"/>
+    </source>
+    <source path="." project_relative_path="board" type="c_include">
+      <files mask="pin_mux.h"/>
+      <files mask="frdmmcxn947.h"/>
+      <files mask="sdmmc_config.h"/>
+      <files mask="frdm_stbi_a8974_shield.h"/>
+      <files mask="issdk_hal.h"/>
+      <files mask="RTE_Device.h"/>
+    </source>
+    <source path="examples/ml_state_monitor/mcu_app/common/issdk/drivers/systick" project_relative_path="board" type="c_include">
+      <files mask="systick_utils.h"/>
+    </source>
+    <source path="." project_relative_path="source/inf-eng/tensorflow" type="c_include">
+      <files mask="tflm_model_select.h"/>
+    </source>
+    <source path="." project_relative_path="source/inf-eng/tensorflow" type="src">
+      <files mask="tflm_model_select_ops.cpp"/>
+    </source>
+    <source path="." project_relative_path="source" type="src">
+      <files mask="main.c"/>
+    </source>
+    <source path="." project_relative_path="source" type="c_include">
+      <files mask="FreeRTOSConfig.h"/>
+      <files mask="version.h"/>
+      <files mask="app_config.h"/>
+    </source>
+    <source path="." project_relative_path="doc" type="doc">
+      <files mask="readme.md"/>
+    </source>
+  </example>
+</ksdk:examples>

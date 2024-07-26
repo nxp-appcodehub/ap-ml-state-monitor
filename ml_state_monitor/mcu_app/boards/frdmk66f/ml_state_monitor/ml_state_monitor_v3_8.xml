@@ -62,6 +62,7 @@
     <definition extID="CMSIS_Driver_Include.SPI.MK66F18"/>
     <definition extID="CMSIS_Driver_Include.USART.MK66F18"/>
     <definition extID="CMSIS_Driver_Include.I2C.MK66F18"/>
+    <definition extID="middleware.eiq.tensorflow_lite_micro.binary.MK66F18"/>
     <definition extID="middleware.eiq.tensorflow_lite_micro.MK66F18"/>
     <definition extID="middleware.eiq.tensorflow_lite_micro.cmsis_nn.MK66F18"/>
     <definition extID="middleware.eiq.tensorflow_lite_micro.third_party.flatbuffers.MK66F18"/>
@@ -141,6 +142,7 @@
     CMSIS_Driver_Include.SPI.MK66F18 
     CMSIS_Driver_Include.USART.MK66F18 
     CMSIS_Driver_Include.I2C.MK66F18 
+    middleware.eiq.tensorflow_lite_micro.binary.MK66F18 
     middleware.eiq.tensorflow_lite_micro.MK66F18 
     middleware.eiq.tensorflow_lite_micro.cmsis_nn.MK66F18 
     middleware.eiq.tensorflow_lite_micro.third_party.flatbuffers.MK66F18 
@@ -192,6 +194,9 @@
           <value>ARM_MATH_CM4</value>
           <value>__FPU_PRESENT=1</value>
           <value>SDK_DEBUGCONSOLE_UART</value>
+          <value>SERIAL_PORT_TYPE_UART=1</value>
+          <value>DEBUG_CONSOLE_TRANSFER_NON_BLOCKING</value>
+          <value>DEBUG_CONSOLE_TRANSMIT_BUFFER_LEN=2048</value>
         </option>
         <option id="com.crt.advproject.gas.fpu" type="enum">
           <value>com.crt.advproject.gas.fpu.fpv4.hard</value>

@@ -22,10 +22,11 @@ manifest:
 
   projects:
     - name: mcux-sdk
-      revision: MCUX_2.12.0
+      revision: MCUX_2.14.0_MCXNx4x
       path: core
       import:
         name-allowlist:
+          - CMSIS_5
           - FreeRTOS-Kernel
           - fatfs
           - mcux-sdk-middleware-sdmmc

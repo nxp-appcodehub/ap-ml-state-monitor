@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_LPCXpresso55S69_APPSWPACKS_ML_STATE_MONITOR" name="LPCXpresso55S69_APPSWPACKS_ML_STATE_MONITOR" brief="This is SDK version 2.12.0 manifest file. It describes the content of the LPCXpresso55S69 and additional settings for tools that support SDK version 2.12.0" format_version="3.8" api_version="2.0.0" configuration="37bbf4eb706f3814bfad8f3a27525c83" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.8.xsd">
+<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_LPCXpresso55S69_APPSWPACKS_ML_STATE_MONITOR" name="LPCXpresso55S69_APPSWPACKS_ML_STATE_MONITOR" brief="This is SDK version 2.14.0 manifest file. It describes the content of the LPCXpresso55S69 and additional settings for tools that support SDK version 2.14.0" format_version="3.8" api_version="2.0.0" configuration="37bbf4eb706f3814bfad8f3a27525c83" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.8.xsd">
   <!--Timestamp (UTC): 2022-01-26 08:51:48.969083-->
   <!--This manifest is generated based on sdk repo commit: 04124c9a3d8bee40269a5fff2c12f59654c36812-->
   <defines>
@@ -7,7 +7,7 @@
     <define name="CPU_$|package|_$|core|" value=""/>
     <define name="CPU_$|package|_$|core_name|" value=""/>
   </defines>
-  <ksdk id="MCUXpressoSDK2120" name="MCUXpressoSDK2120" version="2.12.0"/>
+  <ksdk id="MCUXpressoSDK2140" name="MCUXpressoSDK2140" version="2.14.0"/>
   <compilers>
     <compiler id="compiler_gcc" name="gcc" type="gcc"/>
   </compilers>
@@ -3660,7 +3660,7 @@ ${load}</script>
         <files mask="ffconf_template.h" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.freertos-kernel.LPC55S69" name="FreeRTOS kernel" brief="FreeRTOS kernel" version="202012.00.0" full_name="FreeRTOS kernel" devices="LPC55S69" user_visible="true" type="OS" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.LPC55S69" name="FreeRTOS kernel" brief="FreeRTOS kernel" version="202012.00.0" full_name="FreeRTOS kernel" devices="LPC55S69" user_visible="true" type="OS" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <defines>
         <define name="SDK_OS_FREE_RTOS" value=""/>
       </defines>
@@ -3715,7 +3715,7 @@ ${load}</script>
         <include_path relative_path="include" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.freertos-kernel.armv8m.LPC55S69" name="FreeRTOS port ARMv8M" brief="FreeRTOS port ARMv8M" version="202012.00.0" full_name="FreeRTOS port ARMv8M" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.armv8m.LPC55S69" name="FreeRTOS port ARMv8M" brief="FreeRTOS port ARMv8M" version="202012.00.0" full_name="FreeRTOS port ARMv8M" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <dependencies>
         <component_dependency value="middleware.freertos-kernel.LPC55S69"/>
       </dependencies>
@@ -3803,7 +3803,7 @@ ${load}</script>
         <include_path relative_path="portable/ARMv8M/secure/macros" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.freertos-kernel.cm33_nonsecure_port.LPC55S69" name="cm33 nonsecure port" brief="FreeRTOS cm33 nonsecure port" version="202012.00.0" full_name="FreeRTOS cm33 nonsecure port" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="true" type="middleware" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.cm33_nonsecure_port.LPC55S69" name="cm33 nonsecure port" brief="FreeRTOS cm33 nonsecure port" version="202012.00.0" full_name="FreeRTOS cm33 nonsecure port" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="true" type="middleware" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <dependencies>
         <all>
           <component_dependency value="middleware.freertos-kernel.LPC55S69"/>
@@ -3817,6 +3817,7 @@ ${load}</script>
       <source toolchain="armgcc mcuxpresso" relative_path="portable/GCC/ARM_CM33_NTZ/non_secure" type="c_include" device_cores="cm33_core0_LPC55S69 cm33_core1_LPC55S69">
         <files mask="portasm.h"/>
         <files mask="portmacro.h"/>
+        <files mask="portmacrocommon.h"/>
       </source>
       <source toolchain="armgcc" relative_path="." type="workspace" device_cores="cm33_core0_LPC55S69">
         <files mask="middleware_freertos-kernel_cm33_nonsecure_port.cmake" hidden="true"/>
@@ -3828,7 +3829,7 @@ ${load}</script>
         <include_path relative_path="portable/GCC/ARM_CM33_NTZ/non_secure" toolchain="armgcc mcuxpresso" type="c_include" device_cores="cm33_core0_LPC55S69 cm33_core1_LPC55S69"/>
       </include_paths>
     </component>
-    <component id="middleware.freertos-kernel.cm33_secure_port.LPC55S69" name="cm33 secure port" brief="FreeRTOS cm33 secure port" version="202012.00.0" full_name="FreeRTOS cm33 secure port" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="middleware" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.cm33_secure_port.LPC55S69" name="cm33 secure port" brief="FreeRTOS cm33 secure port" version="202012.00.0" full_name="FreeRTOS cm33 secure port" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="middleware" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <dependencies>
         <all>
           <component_dependency value="middleware.freertos-kernel.LPC55S69"/>
@@ -3931,7 +3932,7 @@ ${load}</script>
         <files mask="global_config.txt"/>
       </source>
     </component>
-    <component id="middleware.freertos-kernel.extension.LPC55S69" name="FreeRTOS NXP extension" brief="FreeRTOS NXP extension" version="202012.00.0" full_name="FreeRTOS NXP extension" devices="LPC55S69" category="Operating System/FreeRTOS kernel extensions" user_visible="false" type="other" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.extension.LPC55S69" name="FreeRTOS NXP extension" brief="FreeRTOS NXP extension" version="202012.00.0" full_name="FreeRTOS NXP extension" devices="LPC55S69" category="Operating System/FreeRTOS kernel extensions" user_visible="false" type="other" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <source relative_path="include" type="c_include">
         <files mask="freertos_tasks_c_additions.h"/>
       </source>
@@ -3945,7 +3946,7 @@ ${load}</script>
         <include_path relative_path="include" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.freertos-kernel.heap_1.LPC55S69" name="FreeRTOS heap 1" brief="FreeRTOS heap 1" version="202012.00.0" full_name="FreeRTOS heap 1" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.heap_1.LPC55S69" name="FreeRTOS heap 1" brief="FreeRTOS heap 1" version="202012.00.0" full_name="FreeRTOS heap 1" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <dependencies>
         <component_dependency value="middleware.freertos-kernel.LPC55S69"/>
       </dependencies>
@@ -3953,7 +3954,7 @@ ${load}</script>
         <files mask="heap_1.c"/>
       </source>
     </component>
-    <component id="middleware.freertos-kernel.heap_2.LPC55S69" name="FreeRTOS heap 2" brief="FreeRTOS heap 2" version="202012.00.0" full_name="FreeRTOS heap 2" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.heap_2.LPC55S69" name="FreeRTOS heap 2" brief="FreeRTOS heap 2" version="202012.00.0" full_name="FreeRTOS heap 2" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <dependencies>
         <component_dependency value="middleware.freertos-kernel.LPC55S69"/>
       </dependencies>
@@ -3961,7 +3962,7 @@ ${load}</script>
         <files mask="heap_2.c"/>
       </source>
     </component>
-    <component id="middleware.freertos-kernel.heap_3.LPC55S69" name="FreeRTOS heap 3" brief="FreeRTOS heap 3" version="202012.00.0" full_name="FreeRTOS heap_3" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.heap_3.LPC55S69" name="FreeRTOS heap 3" brief="FreeRTOS heap 3" version="202012.00.0" full_name="FreeRTOS heap_3" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <dependencies>
         <component_dependency value="middleware.freertos-kernel.LPC55S69"/>
       </dependencies>
@@ -3969,7 +3970,7 @@ ${load}</script>
         <files mask="heap_3.c"/>
       </source>
     </component>
-    <component id="middleware.freertos-kernel.heap_4.LPC55S69" name="FreeRTOS heap 4" brief="FreeRTOS heap 4" version="202012.00.0" full_name="FreeRTOS heap 4" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.heap_4.LPC55S69" name="FreeRTOS heap 4" brief="FreeRTOS heap 4" version="202012.00.0" full_name="FreeRTOS heap 4" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <dependencies>
         <component_dependency value="middleware.freertos-kernel.LPC55S69"/>
       </dependencies>
@@ -3983,7 +3984,7 @@ ${load}</script>
         <files mask="middleware_freertos-kernel_heap_4.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.freertos-kernel.heap_5.LPC55S69" name="FreeRTOS heap 5" brief="FreeRTOS heap 5" version="202012.00.0" full_name="FreeRTOS heap 5" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.heap_5.LPC55S69" name="FreeRTOS heap 5" brief="FreeRTOS heap 5" version="202012.00.0" full_name="FreeRTOS heap 5" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <dependencies>
         <component_dependency value="middleware.freertos-kernel.LPC55S69"/>
       </dependencies>
@@ -3991,7 +3992,7 @@ ${load}</script>
         <files mask="heap_5.c"/>
       </source>
     </component>
-    <component id="middleware.freertos-kernel.mpu_wrappers.LPC55S69" name="FreeRTOS MPU wrappers" brief="FreeRTOS MPU wrappers" version="202012.00.0" full_name="FreeRTOS MPU wrappers" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.mpu_wrappers.LPC55S69" name="FreeRTOS MPU wrappers" brief="FreeRTOS MPU wrappers" version="202012.00.0" full_name="FreeRTOS MPU wrappers" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <dependencies>
         <component_dependency value="middleware.freertos-kernel.LPC55S69"/>
       </dependencies>
@@ -4002,7 +4003,7 @@ ${load}</script>
         <files mask="middleware_freertos-kernel_mpu_wrappers.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.freertos-kernel.secure_context.LPC55S69" name="secure context" brief="FreeRTOS Secure Context" version="202012.00.0" full_name="FreeRTOS Secure Context" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="true" type="middleware" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.secure_context.LPC55S69" name="secure context" brief="FreeRTOS Secure Context" version="202012.00.0" full_name="FreeRTOS Secure Context" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="true" type="middleware" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <dependencies>
         <component_dependency value="middleware.freertos-kernel.template.LPC55S69"/>
       </dependencies>
@@ -4026,7 +4027,7 @@ ${load}</script>
         <include_path relative_path="portable/GCC/ARM_CM33/non_secure" toolchain="armgcc mcuxpresso" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.freertos-kernel.template.LPC55S69" name="FreeRTOS configuration template" brief="Template configuration file to be edited by user. Provides also memory allocator (heap_x), change variant if needed." version="202012.00.0" full_name="FreeRTOS configuration template" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="project_template" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.template.LPC55S69" name="FreeRTOS configuration template" brief="Template configuration file to be edited by user. Provides also memory allocator (heap_x), change variant if needed." version="202012.00.0" full_name="FreeRTOS configuration template" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="project_template" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <source toolchain="armgcc mcuxpresso" relative_path="portable/GCC/ARM_CM33_NTZ/non_secure" type="src" device_cores="cm33_core0_LPC55S69 cm33_core1_LPC55S69">
         <files mask="port.c"/>
         <files mask="portasm.c"/>
@@ -4034,6 +4035,7 @@ ${load}</script>
       <source toolchain="armgcc mcuxpresso" relative_path="portable/GCC/ARM_CM33_NTZ/non_secure" type="c_include" device_cores="cm33_core0_LPC55S69 cm33_core1_LPC55S69">
         <files mask="portasm.h"/>
         <files mask="portmacro.h"/>
+        <files mask="portmacrocommon.h"/>
       </source>
       <source exclude="true" relative_path="portable/MemMang" type="src">
         <files mask="heap_1.c"/>
@@ -4049,7 +4051,7 @@ ${load}</script>
         <include_path relative_path="portable/GCC/ARM_CM33_NTZ/non_secure" toolchain="armgcc mcuxpresso" type="c_include" device_cores="cm33_core0_LPC55S69 cm33_core1_LPC55S69"/>
       </include_paths>
     </component>
-    <component id="middleware.freertos-kernel.unused.LPC55S69" name="FreeRTOS unused" brief="FreeRTOS unused" version="202012.00.0" full_name="FreeRTOS unused" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos_kernel" project_base_path="freertos">
+    <component id="middleware.freertos-kernel.unused.LPC55S69" name="FreeRTOS unused" brief="FreeRTOS unused" version="202012.00.0" full_name="FreeRTOS unused" devices="LPC55S69" category="Operating System/FreeRTOS kernel" user_visible="false" type="other" package_base_path="rtos/freertos/freertos-kernel" project_base_path="freertos">
       <source relative_path="./" type="other">
         <files mask="GitHub-FreeRTOS-Kernel-Home.url"/>
         <files mask="LICENSE.md"/>
@@ -8040,7 +8042,32 @@ ${load}</script>
         <include_path relative_path="common/gprintf" project_relative_path="gprintf" type="c_include"/>
       </include_paths>
     </component>
+    <component id="middleware.eiq.tensorflow_lite_micro.binary.LPC55S69" name="TensorFlow Lite Micro with core specific kernels" brief="TensorFlow Lite Micro library binary with core specific kernel implementations" version="23.09.18" full_name="TensorFlow Lite Micro library binary with core specific kernel implementations" devices="LPC55S69" category="Machine Learning/tensorflow_lite" user_visible="true" type="middleware" package_base_path="middleware/eiq/tensorflow-lite/tensorflow" project_base_path="eiq/tensorflow-lite">
+      <dependencies>
+        <component_dependency value="middleware.eiq.tensorflow_lite_micro.LPC55S69"/>
+      </dependencies>
+      <source toolchain="armgcc mcuxpresso" relative_path="../lib/cm33/armgcc" project_relative_path="lib" type="lib">
+        <files mask="libtflm.a"/>
+      </source>
+      <source toolchain="armgcc mcuxpresso" relative_path="../lib/cm33/armgcc" project_relative_path="lib" type="doc">
+        <files mask="build.sh"/>
+      </source>
+      <source relative_path="../tensorflow/lite/micro" project_relative_path="tensorflow/lite/micro" type="src">
+        <files mask="debug_log.cpp"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./" type="workspace">
+        <files mask="middleware_eiq_tensorflow_lite_micro_binary.cmake" hidden="true"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./" type="c_include"/>
+        <include_path relative_path="../third_party/flatbuffers/include" project_relative_path="third_party/flatbuffers/include" type="c_include"/>
+        <include_path relative_path="../third_party/gemmlowp" project_relative_path="third_party/gemmlowp" type="c_include"/>
+      </include_paths>
+    </component>
     <component id="middleware.eiq.tensorflow_lite_micro.LPC55S69" name="TensorFlow Lite Micro" brief="TensorFlow Lite Micro library" version="2.4.1" full_name="TensorFlow Lite Micro library" devices="LPC55S69" device_cores="cm33_core0_LPC55S69" category="Machine Learning/eIQ" user_visible="false" type="middleware" package_base_path="middleware/eiq" project_base_path="eiq">
+      <defines>
+        <define name="TF_LITE_STATIC_MEMORY" value=""/>
+      </defines>
       <dependencies>
         <all>
           <component_dependency value="middleware.eiq.tensorflow_lite_micro.third_party.flatbuffers.LPC55S69"/>
@@ -8048,42 +8075,96 @@ ${load}</script>
           <component_dependency value="middleware.eiq.tensorflow_lite_micro.third_party.ruy.LPC55S69"/>
         </all>
       </dependencies>
-      <source relative_path="tensorflow-lite/tensorflow/core/public" type="c_include">
-        <files mask="version.h"/>
+      <source relative_path="tensorflow-lite/signal/micro/kernels" project_relative_path="tensorflow-lite/signal/micro/kernels" type="c_include">
+        <files mask="delay_flexbuffers_generated_data.h"/>
+        <files mask="energy_flexbuffers_generated_data.h"/>
+        <files mask="fft_flexbuffers_generated_data.h"/>
+        <files mask="filter_bank_flexbuffers_generated_data.h"/>
+        <files mask="filter_bank_log_flexbuffers_generated_data.h"/>
+        <files mask="filter_bank_spectral_subtraction_flexbuffers_generated_data.h"/>
+        <files mask="framer_flexbuffers_generated_data.h"/>
+        <files mask="irfft.h"/>
+        <files mask="overlap_add_flexbuffers_generated_data.h"/>
+        <files mask="pcan_flexbuffers_generated_data.h"/>
+        <files mask="rfft.h"/>
+        <files mask="stacker_flexbuffers_generated_data.h"/>
+        <files mask="window_flexbuffers_generated_data.h"/>
+      </source>
+      <source relative_path="tensorflow-lite/signal/src" project_relative_path="tensorflow-lite/signal/src" type="c_include">
+        <files mask="circular_buffer.h"/>
+        <files mask="complex.h"/>
+        <files mask="energy.h"/>
+        <files mask="fft_auto_scale.h"/>
+        <files mask="filter_bank.h"/>
+        <files mask="filter_bank_log.h"/>
+        <files mask="filter_bank_spectral_subtraction.h"/>
+        <files mask="filter_bank_square_root.h"/>
+        <files mask="irfft.h"/>
+        <files mask="log.h"/>
+        <files mask="max_abs.h"/>
+        <files mask="msb.h"/>
+        <files mask="overlap_add.h"/>
+        <files mask="pcan_argc_fixed.h"/>
+        <files mask="rfft.h"/>
+        <files mask="square_root.h"/>
+        <files mask="window.h"/>
+      </source>
+      <source relative_path="tensorflow-lite/signal/src/kiss_fft_wrappers" project_relative_path="tensorflow-lite/signal/src/kiss_fft_wrappers" type="c_include">
+        <files mask="kiss_fft_common.h"/>
+        <files mask="kiss_fft_float.h"/>
+        <files mask="kiss_fft_int16.h"/>
+        <files mask="kiss_fft_int32.h"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite" type="c_include">
+        <files mask="builtin_op_data.h"/>
+        <files mask="builtin_ops.h"/>
+        <files mask="context_util.h"/>
         <files mask="portable_type_to_tflitetype.h"/>
-        <files mask="version.h"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/c" type="c_include">
         <files mask="common.h"/>
         <files mask="builtin_op_data.h"/>
         <files mask="c_api_types.h"/>
       </source>
-      <source relative_path="tensorflow-lite/tensorflow/lite/c" type="src">
-        <files mask="common.c"/>
+      <source relative_path="tensorflow-lite/tensorflow/lite/core" project_relative_path="tensorflow-lite/tensorflow/lite/core" type="c_include">
+        <files mask="macros.h"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/core/api" type="c_include">
         <files mask="error_reporter.h"/>
         <files mask="flatbuffer_conversions.h"/>
+        <!--
         <files mask="op_resolver.h"/>
-        <files mask="profiler.h"/>
+        -->
         <files mask="tensor_utils.h"/>
       </source>
+      <!--
       <source relative_path="tensorflow-lite/tensorflow/lite/core/api" type="src">
         <files mask="error_reporter.cpp"/>
         <files mask="flatbuffer_conversions.cpp"/>
         <files mask="op_resolver.cpp"/>
         <files mask="tensor_utils.cpp"/>
       </source>
+      -->
+      <source relative_path="tensorflow-lite/tensorflow/lite/core/c" type="c_include">
+        <files mask="builtin_op_data.h"/>
+        <files mask="c_api_types.h"/>
+        <files mask="common.h"/>
+      </source>
+      <!--
+      <source relative_path="tensorflow-lite/tensorflow/lite/core/c" type="src">
+        <files mask="common.cpp"/>
+      </source>
+      -->
       <source relative_path="tensorflow-lite/tensorflow/lite/kernels" type="c_include">
         <files mask="kernel_util.h"/>
         <files mask="op_macros.h"/>
         <files mask="padding.h"/>
       </source>
+      <!--
       <source relative_path="tensorflow-lite/tensorflow/lite/kernels" type="src">
-        <files mask="kernel_utils.cpp"/>
+        <files mask="kernel_util.cpp"/>
       </source>
+      -->
       <source relative_path="tensorflow-lite/tensorflow/lite/kernels/internal" type="c_include">
         <files mask="common.h"/>
         <files mask="compatibility.h"/>
@@ -8098,9 +8179,13 @@ ${load}</script>
         <files mask="tensor_ctypes.h"/>
         <files mask="types.h"/>
       </source>
+      <!--
       <source relative_path="tensorflow-lite/tensorflow/lite/kernels/internal" type="src">
+        <files mask="portable_tensor_utils.cpp"/>
         <files mask="quantization_util.cpp"/>
+        <files mask="tensor_utils.cpp"/>
       </source>
+      -->
       <source relative_path="tensorflow-lite/tensorflow/lite/kernels/internal/optimized" type="c_include">
         <files mask="neon_check.h"/>
       </source>
@@ -8108,8 +8193,11 @@ ${load}</script>
         <files mask="add.h"/>
         <files mask="add_n.h"/>
         <files mask="arg_min_max.h"/>
+        <files mask="batch_matmul.h"/>
         <files mask="batch_to_space_nd.h"/>
         <files mask="binary_function.h"/>
+        <files mask="broadcast_args.h"/>
+        <files mask="broadcast_to.h"/>
         <files mask="ceil.h"/>
         <files mask="comparisons.h"/>
         <files mask="concatenation.h"/>
@@ -8119,6 +8207,7 @@ ${load}</script>
         <files mask="depthwiseconv_float.h"/>
         <files mask="depthwiseconv_uint8.h"/>
         <files mask="dequantize.h"/>
+        <files mask="div.h"/>
         <files mask="elu.h"/>
         <files mask="exp.h"/>
         <files mask="fill.h"/>
@@ -8131,11 +8220,13 @@ ${load}</script>
         <files mask="leaky_relu.h"/>
         <files mask="log_softmax.h"/>
         <files mask="logistic.h"/>
+        <files mask="lstm_cell.h"/>
         <files mask="maximum_minimum.h"/>
         <files mask="mul.h"/>
         <files mask="neg.h"/>
         <files mask="pad.h"/>
         <files mask="pooling.h"/>
+        <files mask="portable_tensor_utils.h"/>
         <files mask="portable_tensor_utils_impl.h"/>
         <files mask="prelu.h"/>
         <files mask="process_broadcast_shapes.h"/>
@@ -8145,6 +8236,7 @@ ${load}</script>
         <files mask="resize_bilinear.h"/>
         <files mask="resize_nearest_neighbor.h"/>
         <files mask="round.h"/>
+        <files mask="select.h"/>
         <files mask="slice.h"/>
         <files mask="softmax.h"/>
         <files mask="space_to_batch_nd.h"/>
@@ -8155,8 +8247,13 @@ ${load}</script>
         <files mask="transpose.h"/>
         <files mask="transpose_conv.h"/>
       </source>
+      <!--
+      <source relative_path="tensorflow-lite/tensorflow/lite/kernels/internal/reference" type="src">
+        <files mask="portable_tensor_utils.cpp"/>
+      </source>
+      -->
       <source relative_path="tensorflow-lite/tensorflow/lite/kernels/internal/reference/integer_ops" type="c_include">
-        <files mask="add.h"/>
+         <files mask="add.h"/>
         <files mask="conv.h"/>
         <files mask="depthwise_conv.h"/>
         <files mask="fully_connected.h"/>
@@ -8168,58 +8265,75 @@ ${load}</script>
         <files mask="tanh.h"/>
         <files mask="transpose_conv.h"/>
       </source>
+      <!--
       <source relative_path="tensorflow-lite/tensorflow/lite/micro" type="src">
         <files mask="all_ops_resolver.cpp"/>
         <files mask="debug_log.cpp"/>
         <files mask="fake_micro_context.cpp"/>
         <files mask="flatbuffer_utils.cpp"/>
         <files mask="memory_helpers.cpp"/>
+        <files mask="micro_allocation_info.cpp"/>
         <files mask="micro_allocator.cpp"/>
         <files mask="micro_context.cpp"/>
-        <files mask="micro_error_reporter.cpp"/>
         <files mask="micro_graph.cpp"/>
         <files mask="micro_interpreter.cpp"/>
+        <files mask="micro_log.cpp"/>
+        <files mask="micro_op_resolver.cpp"/>
         <files mask="micro_profiler.cpp"/>
         <files mask="micro_resource_variable.cpp"/>
         <files mask="micro_string.cpp"/>
         <files mask="micro_time.cpp"/>
         <files mask="micro_utils.cpp"/>
         <files mask="recording_micro_allocator.cpp"/>
-        <files mask="recording_simple_memory_allocator.cpp"/>
-        <files mask="simple_memory_allocator.cpp"/>
       </source>
+      -->
       <source relative_path="tensorflow-lite/tensorflow/lite/micro" type="c_include">
+        <!--
         <files mask="all_ops_resolver.h"/>
+        -->
         <files mask="compatibility.h"/>
         <files mask="debug_log.h"/>
         <files mask="fake_micro_context.h"/>
         <files mask="flatbuffer_utils.h"/>
         <files mask="memory_helpers.h"/>
+        <files mask="micro_allocation_info.h"/>
         <files mask="micro_allocator.h"/>
         <files mask="micro_arena_constants.h"/>
+        <files mask="micro_common.h"/>
         <files mask="micro_context.h"/>
-        <files mask="micro_error_reporter.h"/>
         <files mask="micro_graph.h"/>
         <files mask="micro_interpreter.h"/>
+        <files mask="micro_interpreter_context.h"/>
+        <files mask="micro_interpreter_graph.h"/>
+        <files mask="micro_log.h"/>
         <files mask="micro_mutable_op_resolver.h"/>
         <files mask="micro_op_resolver.h"/>
         <files mask="micro_profiler.h"/>
+        <files mask="micro_profiler_interface.h"/>
         <files mask="micro_resource_variable.h"/>
+        <!--
         <files mask="micro_string.h"/>
+        -->
         <files mask="micro_time.h"/>
         <files mask="micro_utils.h"/>
+        <files mask="mock_micro_graph.h"/>
         <files mask="recording_micro_allocator.h"/>
-        <files mask="recording_simple_memory_allocator.h"/>
-        <files mask="simple_memory_allocator.h"/>
+        <files mask="recording_micro_interpreter.h"/>
+        <files mask="system_setup.h"/>
+        <files mask="test_helper_custom_ops.h"/>
+        <files mask="test_helpers.h"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/micro/kernels" type="c_include">
         <files mask="activation_utils.h"/>
         <files mask="activations.h"/>
         <files mask="add.h"/>
         <files mask="circular_buffer.h"/>
+        <files mask="circular_buffer_flexbuffers_generated_data.h"/>
         <files mask="conv.h"/>
+        <files mask="conv_test.h"/>
         <files mask="depthwise_conv.h"/>
         <files mask="dequantize.h"/>
+        <files mask="detection_postprocess_flexbuffers_generated_data.h"/>
         <files mask="ethosu.h"/>
         <files mask="fully_connected.h"/>
         <files mask="hard_swish.h"/>
@@ -8228,15 +8342,23 @@ ${load}</script>
         <files mask="leaky_relu.h"/>
         <files mask="logical.h"/>
         <files mask="logistic.h"/>
+        <files mask="lstm_eval.h"/>
+        <files mask="lstm_eval_test.h"/>
+        <files mask="lstm_shared.h"/>
         <files mask="micro_ops.h"/>
-        <files mask="micro_utils.h"/>
+        <files mask="micro_tensor_utils.h"/>
         <files mask="mul.h"/>
+        <files mask="pad.h"/>
         <files mask="pooling.h"/>
         <files mask="prelu.h"/>
         <files mask="quantize.h"/>
+        <files mask="reduce.h"/>
+        <files mask="reshape.h"/>
         <files mask="softmax.h"/>
+        <files mask="strided_slice.h"/>
         <files mask="sub.h"/>
         <files mask="svdf.h"/>
+        <files mask="unidirectional_sequence_lstm.h"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/micro/kernels" type="src">
         <files mask="activations_common.cpp"/>
@@ -8245,6 +8367,8 @@ ${load}</script>
         <files mask="arg_min_max.cpp"/>
         <files mask="assign_variable.cpp"/>
         <files mask="batch_to_space_nd.cpp"/>
+        <files mask="broadcast_args.cpp"/>
+        <files mask="broadcast_to.cpp"/>
         <files mask="call_once.cpp"/>
         <files mask="cast.cpp"/>
         <files mask="ceil.cpp"/>
@@ -8259,9 +8383,9 @@ ${load}</script>
         <files mask="dequantize.cpp"/>
         <files mask="dequantize_common.cpp"/>
         <files mask="detection_postprocess.cpp"/>
+        <files mask="div.cpp"/>
         <files mask="elementwise.cpp"/>
         <files mask="elu.cpp"/>
-        <files mask="ethosu.cpp"/>
         <files mask="exp.cpp"/>
         <files mask="expand_dims.cpp"/>
         <files mask="fill.cpp"/>
@@ -8281,22 +8405,23 @@ ${load}</script>
         <files mask="logical.cpp"/>
         <files mask="logical_common.cpp"/>
         <files mask="logistic_common.cpp"/>
+        <files mask="lstm_eval_common.cpp"/>
         <files mask="maximum_minimum.cpp"/>
+        <files mask="micro_tensor_utils.cpp"/>
         <files mask="mirror_pad.cpp"/>
         <files mask="mul_common.cpp"/>
         <files mask="neg.cpp"/>
         <files mask="pack.cpp"/>
-        <files mask="pad.cpp"/>
         <files mask="pooling_common.cpp"/>
         <files mask="prelu.cpp"/>
         <files mask="prelu_common.cpp"/>
         <files mask="quantize_common.cpp"/>
         <files mask="read_variable.cpp"/>
-        <files mask="reduce.cpp"/>
-        <files mask="reshape.cpp"/>
+        <files mask="reduce_common.cpp"/>
         <files mask="resize_bilinear.cpp"/>
         <files mask="resize_nearest_neighbor.cpp"/>
         <files mask="round.cpp"/>
+        <files mask="select.cpp"/>
         <files mask="shape.cpp"/>
         <files mask="slice.cpp"/>
         <files mask="softmax_common.cpp"/>
@@ -8304,16 +8429,29 @@ ${load}</script>
         <files mask="space_to_depth.cpp"/>
         <files mask="split.cpp"/>
         <files mask="split_v.cpp"/>
+        <files mask="squared_difference.cpp"/>
         <files mask="squeeze.cpp"/>
-        <files mask="strided_slice.cpp"/>
-        <files mask="sub.cpp"/>
         <files mask="sub_common.cpp"/>
         <files mask="svdf_common.cpp"/>
         <files mask="tanh.cpp"/>
         <files mask="transpose.cpp"/>
         <files mask="unpack.cpp"/>
         <files mask="var_handle.cpp"/>
+        <files mask="while.cpp"/>
         <files mask="zeros_like.cpp"/>
+      </source>
+      <source relative_path="tensorflow-lite/tensorflow/lite/micro/arena_allocator" type="c_include">
+        <files mask="ibuffer_allocator.h"/>
+        <files mask="non_persistent_arena_buffer_allocator.h"/>
+        <files mask="persistent_arena_buffer_allocator.h"/>
+        <files mask="recording_single_arena_buffer_allocator.h"/>
+        <files mask="single_arena_buffer_allocator.h"/>
+      </source>
+      <source relative_path="tensorflow-lite/tensorflow/lite/micro/arena_allocator" type="src">
+        <files mask="non_persistent_arena_buffer_allocator.cpp"/>
+        <files mask="persistent_arena_buffer_allocator.cpp"/>
+        <files mask="recording_single_arena_buffer_allocator.cpp"/>
+        <files mask="single_arena_buffer_allocator.cpp"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/micro/memory_planner" type="c_include">
         <files mask="greedy_memory_planner.h"/>
@@ -8326,6 +8464,14 @@ ${load}</script>
         <files mask="greedy_memory_planner.cpp"/>
         <files mask="linear_memory_planner.cpp"/>
         <files mask="non_persistent_buffer_planner_shim.cpp"/>
+      </source>
+      <source relative_path="tensorflow-lite/tensorflow/lite/micro/tflite_bridge" type="c_include">
+        <files mask="flatbuffer_conversions_bridge.h"/>
+        <files mask="micro_error_reporter.h"/>
+      </source>
+      <source relative_path="tensorflow-lite/tensorflow/lite/micro/tflite_bridge" type="src">
+        <files mask="flatbuffer_conversions_bridge.cpp"/>
+        <files mask="micro_error_reporter.cpp"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/schema" type="src">
         <files mask="schema_utils.cpp"/>
@@ -8358,13 +8504,21 @@ ${load}</script>
         <files mask="pooling.cpp"/>
         <files mask="softmax.cpp"/>
         <files mask="svdf.cpp"/>
+        <files mask="unidirectional_sequence_lstm.cpp"/>
       </source>
       <source relative_path="tensorflow-lite/tensorflow/lite/micro/kernels" type="src">
         <files mask="activations.cpp"/>
+        <files mask="ethosu.cpp"/>
         <files mask="floor.cpp"/>
         <files mask="leaky_relu.cpp"/>
         <files mask="logistic.cpp"/>
+        <files mask="lstm_eval.cpp"/>
+        <files mask="pad.cpp"/>
         <files mask="quantize.cpp"/>
+        <files mask="reduce.cpp"/>
+        <files mask="reshape.cpp"/>
+        <files mask="strided_slice.cpp"/>
+        <files mask="sub.cpp"/>
         <files mask="transpose_conv.cpp"/>
       </source>
       <source exclude="true" relative_path="tensorflow-lite/tensorflow/lite/micro/kernels" type="src">
@@ -8373,9 +8527,10 @@ ${load}</script>
         <files mask="depthwise_conv.cpp"/>
         <files mask="fully_connected.cpp"/>
         <files mask="mul.cpp"/>
-        <files mask="softmax.cpp"/>
         <files mask="pooling.cpp"/>
+        <files mask="softmax.cpp"/>
         <files mask="svdf.cpp"/>
+        <files mask="unidirectional_sequence_lstm.cpp"/>
       </source>
       <include_paths>
         <include_path relative_path="tensorflow-lite" type="c_include"/>
@@ -8428,35 +8583,63 @@ ${load}</script>
         <files mask="core_cm4.h"/>
         <files mask="core_cm55.h"/>
         <files mask="core_cm7.h"/>
+        <files mask="core_cm85.h"/>
         <files mask="core_sc000.h"/>
         <files mask="core_sc300.h"/>
+        <files mask="core_star.h"/>
+        <files mask="core_starmc1.h"/>
         <files mask="mpu_armv7.h"/>
         <files mask="mpu_armv8.h"/>
+        <files mask="pac_armv81.h"/>
         <files mask="pmu_armv8.h"/>
         <files mask="tz_context.h"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/DSP/Include" type="c_include">
         <files mask="arm_common_tables.h"/>
+        <files mask="arm_common_tables_f16.h"/>
+        <files mask="arm_const_structs.h"/>
+        <files mask="arm_const_structs_f16.h"/>
+        <files mask="arm_helium_utils.h"/>
         <files mask="arm_math.h"/>
+        <files mask="arm_math_f16.h"/>
         <files mask="arm_math_memory.h"/>
         <files mask="arm_math_types.h"/>
+        <files mask="arm_math_types_f16.h"/>
+        <files mask="arm_mve_tables.h"/>
+        <files mask="arm_mve_tables_f16.h"/>
+        <files mask="arm_vec_math.h"/>
+        <files mask="arm_vec_math_f16.h"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/DSP/Include/dsp" type="c_include">
         <files mask="basic_math_functions.h"/>
+        <files mask="basic_math_functions_f16.h"/>
         <files mask="bayes_functions.h"/>
+        <files mask="bayes_functions_f16.h"/>
         <files mask="complex_math_functions.h"/>
+        <files mask="complex_math_functions_f16.h"/>
         <files mask="controller_functions.h"/>
+        <files mask="controller_functions_f16.h"/>
         <files mask="distance_functions.h"/>
+        <files mask="distance_functions_f16.h"/>
         <files mask="fast_math_functions.h"/>
+        <files mask="fast_math_functions_f16.h"/>
         <files mask="filtering_functions.h"/>
+        <files mask="filtering_functions_f16.h"/>
         <files mask="interpolation_functions.h"/>
+        <files mask="interpolation_functions_f16.h"/>
         <files mask="matrix_functions.h"/>
+        <files mask="matrix_functions_f16.h"/>
         <files mask="none.h"/>
+        <files mask="quaternion_math_functions.h"/>
         <files mask="statistics_functions.h"/>
+        <files mask="statistics_functions_f16.h"/>
         <files mask="support_functions.h"/>
+        <files mask="support_functions_f16.h"/>
         <files mask="svm_defines.h"/>
         <files mask="svm_functions.h"/>
+        <files mask="svm_functions_f16.h"/>
         <files mask="transform_functions.h"/>
+        <files mask="transform_functions_f16.h"/>
         <files mask="utils.h"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Include" type="c_include">
@@ -8466,15 +8649,20 @@ ${load}</script>
         <files mask="arm_nnfunctions.h"/>
         <files mask="arm_nnsupportfunctions.h"/>
       </source>
+      <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Include/Internal" type="c_include">
+        <files mask="arm_nn_compiler.h"/>
+      </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Source/ActivationFunctions" type="src">
-        <files mask="arm_nn_activations_q15.c"/>
-        <files mask="arm_nn_activations_q7.c"/>
+        <files mask="arm_nn_activation_s16.c"/>
         <files mask="arm_relu6_s8.c"/>
         <files mask="arm_relu_q15.c"/>
         <files mask="arm_relu_q7.c"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Source/BasicMathFunctions" type="src">
+        <files mask="arm_elementwise_add_s16.c"/>
         <files mask="arm_elementwise_add_s8.c"/>
+        <files mask="arm_elementwise_mul_s16.c"/>
+        <files mask="arm_elementwise_mul_s16_s8.c"/>
         <files mask="arm_elementwise_mul_s8.c"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Source/ConcatenationFunctions" type="src">
@@ -8485,81 +8673,84 @@ ${load}</script>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Source/ConvolutionFunctions" type="src">
         <files mask="arm_convolve_1_x_n_s8.c"/>
-        <files mask="arm_convolve_1x1_HWC_q7_fast_nonsquare.c"/>
+        <files mask="arm_convolve_1x1_s8.c"/>
         <files mask="arm_convolve_1x1_s8_fast.c"/>
-        <files mask="arm_convolve_HWC_q15_basic.c"/>
-        <files mask="arm_convolve_HWC_q15_fast.c"/>
-        <files mask="arm_convolve_HWC_q15_fast_nonsquare.c"/>
-        <files mask="arm_convolve_HWC_q7_RGB.c"/>
-        <files mask="arm_convolve_HWC_q7_basic.c"/>
-        <files mask="arm_convolve_HWC_q7_basic_nonsquare.c"/>
-        <files mask="arm_convolve_HWC_q7_fast.c"/>
-        <files mask="arm_convolve_HWC_q7_fast_nonsquare.c"/>
+        <files mask="arm_convolve_fast_s16.c"/>
+        <files mask="arm_convolve_get_buffer_sizes_s16.c"/>
+        <files mask="arm_convolve_get_buffer_sizes_s8.c"/>
+        <files mask="arm_convolve_s16.c"/>
         <files mask="arm_convolve_s8.c"/>
+        <files mask="arm_convolve_wrapper_s16.c"/>
         <files mask="arm_convolve_wrapper_s8.c"/>
         <files mask="arm_depthwise_conv_3x3_s8.c"/>
+        <files mask="arm_depthwise_conv_fast_s16.c"/>
+        <files mask="arm_depthwise_conv_get_buffer_sizes_s16.c"/>
+        <files mask="arm_depthwise_conv_get_buffer_sizes_s8.c"/>
+        <files mask="arm_depthwise_conv_s16.c"/>
         <files mask="arm_depthwise_conv_s8.c"/>
         <files mask="arm_depthwise_conv_s8_opt.c"/>
-        <files mask="arm_depthwise_conv_u8_basic_ver1.c"/>
+        <files mask="arm_depthwise_conv_wrapper_s16.c"/>
         <files mask="arm_depthwise_conv_wrapper_s8.c"/>
-        <files mask="arm_depthwise_separable_conv_HWC_q7.c"/>
-        <files mask="arm_depthwise_separable_conv_HWC_q7_nonsquare.c"/>
         <files mask="arm_nn_depthwise_conv_s8_core.c"/>
-        <files mask="arm_nn_mat_mult_kernel_q7_q15.c"/>
-        <files mask="arm_nn_mat_mult_kernel_q7_q15_reordered.c"/>
         <files mask="arm_nn_mat_mult_kernel_s8_s16.c"/>
-        <files mask="arm_nn_mat_mult_kernel_s8_s16_reordered.c"/>
         <files mask="arm_nn_mat_mult_s8.c"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Source/FullyConnectedFunctions" type="src">
-        <files mask="arm_fully_connected_mat_q7_vec_q15.c"/>
-        <files mask="arm_fully_connected_mat_q7_vec_q15_opt.c"/>
-        <files mask="arm_fully_connected_q15.c"/>
-        <files mask="arm_fully_connected_q15_opt.c"/>
-        <files mask="arm_fully_connected_q7.c"/>
-        <files mask="arm_fully_connected_q7_opt.c"/>
+        <files mask="arm_fully_connected_get_buffer_sizes_s16.c"/>
+        <files mask="arm_fully_connected_get_buffer_sizes_s8.c"/>
+        <files mask="arm_fully_connected_s16.c"/>
         <files mask="arm_fully_connected_s8.c"/>
       </source>
+      <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Source/LSTMFunctions" type="src">
+        <files mask="arm_lstm_unidirectional_s8_s16.c"/>
+      </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Source/NNSupportFunctions" type="src">
-        <files mask="arm_nn_accumulate_q7_to_q15.c"/>
-        <files mask="arm_nn_add_q7.c"/>
         <files mask="arm_nn_depthwise_conv_nt_t_padded_s8.c"/>
+        <files mask="arm_nn_depthwise_conv_nt_t_s16.c"/>
         <files mask="arm_nn_depthwise_conv_nt_t_s8.c"/>
+        <files mask="arm_nn_lstm_calculate_gate_s8_s16.c"/>
+        <files mask="arm_nn_lstm_step_s8_s16.c"/>
+        <files mask="arm_nn_lstm_update_cell_state_s16.c"/>
+        <files mask="arm_nn_lstm_update_output_s8_s16.c"/>
         <files mask="arm_nn_mat_mul_core_1x_s8.c"/>
         <files mask="arm_nn_mat_mul_core_4x_s8.c"/>
+        <files mask="arm_nn_mat_mul_kernel_s16.c"/>
         <files mask="arm_nn_mat_mult_nt_t_s8.c"/>
-        <files mask="arm_nn_mult_q15.c"/>
-        <files mask="arm_nn_mult_q7.c"/>
+        <files mask="arm_nn_vec_mat_mul_result_acc_s8.c"/>
+        <files mask="arm_nn_vec_mat_mult_t_s16.c"/>
         <files mask="arm_nn_vec_mat_mult_t_s8.c"/>
+        <files mask="arm_nn_vec_mat_mult_t_svdf_s8.c"/>
         <files mask="arm_nntables.c"/>
-        <files mask="arm_q7_to_q15_no_shift.c"/>
-        <files mask="arm_q7_to_q15_reordered_no_shift.c"/>
-        <files mask="arm_q7_to_q15_reordered_with_offset.c"/>
         <files mask="arm_q7_to_q15_with_offset.c"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Source/PoolingFunctions" type="src">
+        <files mask="arm_avgpool_get_buffer_sizes_s16.c"/>
+        <files mask="arm_avgpool_get_buffer_sizes_s8.c"/>
+        <files mask="arm_avgpool_s16.c"/>
         <files mask="arm_avgpool_s8.c"/>
+        <files mask="arm_max_pool_s16.c"/>
         <files mask="arm_max_pool_s8.c"/>
-        <files mask="arm_pool_q7_HWC.c"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Source/ReshapeFunctions" type="src">
         <files mask="arm_reshape_s8.c"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Source/SVDFunctions" type="src">
         <files mask="arm_svdf_s8.c"/>
+        <files mask="arm_svdf_state_s16_s8.c"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN/Source/SoftmaxFunctions" type="src">
-        <files mask="arm_softmax_q15.c"/>
-        <files mask="arm_softmax_q7.c"/>
+        <files mask="arm_nn_softmax_common_s8.c"/>
+        <files mask="arm_softmax_s16.c"/>
         <files mask="arm_softmax_s8.c"/>
+        <files mask="arm_softmax_s8_s16.c"/>
         <files mask="arm_softmax_u8.c"/>
-        <files mask="arm_softmax_with_batch_q7.c"/>
       </source>
       <source relative_path="tensorflow-lite/third_party/cmsis" type="doc">
         <files mask="LICENSE.txt"/>
       </source>
       <include_paths>
         <include_path relative_path="tensorflow-lite/third_party/cmsis" type="c_include"/>
+        <include_path relative_path="tensorflow-lite/third_party/cmsis/CMSIS/NN" type="c_include"/>
       </include_paths>
     </component>
     <component id="middleware.eiq.tensorflow_lite_micro.third_party.fft2d.LPC55S69" name="FFT2D" brief="General Purpose FFT (Fast Fourier/Cosine/Sine Transform) Package" version="1.0.0" full_name="FFT2D library" devices="LPC55S69" device_cores="cm33_core0_LPC55S69" category="Machine Learning/eIQ" user_visible="false" type="middleware" package_base_path="middleware/eiq" project_base_path="eiq/tensorflow-lite">

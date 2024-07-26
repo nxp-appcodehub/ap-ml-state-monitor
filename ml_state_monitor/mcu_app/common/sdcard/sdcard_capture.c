@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 NXP
+ * Copyright 2021, 2024 NXP
  * All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
@@ -264,6 +264,12 @@ void SDCARD_CaptureData(uint64_t ts_us, uint64_t sample_num, uint64_t totalDurat
             SDCARD_SyncFile(&g_fp);
             tsLastSync_us = ts_us;
         }
+
+        /* Close the file on the SD card */
+        if ((sample_num >= totalDuration_samples) && (totalDuration_samples != 0))
+        {
+            SDCARD_CloseFile(&g_fp);
+        }
     }
     else
     {
@@ -273,5 +279,5 @@ void SDCARD_CaptureData(uint64_t ts_us, uint64_t sample_num, uint64_t totalDurat
 
 void SDCARD_CaptureClose()
 {
-    SDCARD_CloseFile(&g_fp);
+    // SDCARD_CloseFile(&g_fp);
 }

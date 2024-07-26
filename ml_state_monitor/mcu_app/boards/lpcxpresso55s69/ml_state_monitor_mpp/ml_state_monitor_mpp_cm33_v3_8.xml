@@ -22,6 +22,7 @@
     <definition extID="CMSIS_Driver_Include.I2C.LPC55S69"/>
     <definition extID="CMSIS_Driver_Include.GPIO.LPC55S69"/>
     <definition extID="CMSIS_Driver_Include.Common.LPC55S69"/>
+    <definition extID="middleware.eiq.tensorflow_lite_micro.binary.LPC55S69"/>
     <definition extID="middleware.eiq.tensorflow_lite_micro.LPC55S69"/>
     <definition extID="middleware.eiq.tensorflow_lite_micro.cmsis_nn.LPC55S69"/>
     <definition extID="middleware.eiq.tensorflow_lite_micro.third_party.flatbuffers.LPC55S69"/>
@@ -120,6 +121,7 @@
   middleware.eiq.tensorflow_lite_micro.third_party.ruy.LPC55S69 
   middleware.eiq.tensorflow_lite_micro.cmsis_nn.LPC55S69 
   middleware.eiq.tensorflow_lite_micro.LPC55S69 
+  middleware.eiq.tensorflow_lite_micro.binary.LPC55S69 
   middleware.eiq.mpp.LPC55S69 
   CMSIS_Driver_Include.USART.LPC55S69 
   CMSIS_Driver_Include.SPI.LPC55S69 

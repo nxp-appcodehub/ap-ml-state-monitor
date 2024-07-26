@@ -36,6 +36,7 @@
     <definition extID="CMSIS_Driver_Include.SPI.MIMXRT1176"/>
     <definition extID="CMSIS_Driver_Include.USART.MIMXRT1176"/>
     <definition extID="CMSIS_Driver_Include.I2C.MIMXRT1176"/>
+    <definition extID="middleware.eiq.tensorflow_lite_micro.binary.MIMXRT1176"/>
     <definition extID="middleware.eiq.tensorflow_lite_micro.MIMXRT1176"/>
     <definition extID="component.lists.MIMXRT1176"/>
     <definition extID="component.lpuart_adapter.MIMXRT1176"/>
@@ -127,6 +128,7 @@
   CMSIS_Driver_Include.SPI.MIMXRT1176 
   CMSIS_Driver_Include.USART.MIMXRT1176 
   CMSIS_Driver_Include.I2C.MIMXRT1176 
+  middleware.eiq.tensorflow_lite_micro.binary.MIMXRT1176 
   middleware.eiq.tensorflow_lite_micro.MIMXRT1176 
   component.lists.MIMXRT1176 
   component.lpuart_adapter.MIMXRT1176 

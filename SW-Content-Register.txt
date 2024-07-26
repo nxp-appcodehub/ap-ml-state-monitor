@@ -1,19 +1,17 @@
-Package: Application Software Pack - ML State Monitor
-Version: 1.3.0
-Outgoing License: LA_OPT_NXP_Software_License v49 September 2023 - Additional Distribution License granted, license in Section 2.3 applies
-License File: LICENSE.txt
+NXP Software Content Register
+
+Release Name: Application Software Pack - ML State Monitor
+Release Version: 1.4.0
+Outgoing License: LA_OPT_NXP_Software_License v57 July 2024 - Additional Distribution License granted, license in Section 2.3 applies
+License in File: LICENSE.txt
 Description and Comments: Enable developers to develop and deploy time-series NN
 Release Location: https://github.com/nxp-appcodehub/ap-ml-state-monitor
 Origin: NXP (BSD-3-Clause)
 
-Compatible SDK Version: 2.12.0
-Compatible SDK Tag: MCUX_2.12.0
-Compatible SDK Url: https://github.com/NXPmicro/mcux-sdk/tree/MCUX_2.12.0
-
 --------------------------------------------
 
 Package:                    Common Support Components
-Version:                    1.2.0
+Version:                    1.3.0
 Outgoing License:           BSD-3-Clause
 License File:               COPYING-BSD-3
 Format:                     source code, header files, ml models
@@ -25,12 +23,23 @@ Origin:                     NXP (BSD-3-clause)
 
 Package:                    MPP Time Series Preview Library
 Version:                    MPP_1.0.0_SDK_2.13.0_TS
-Outgoing License:           LA_OPT_NXP_Software_License v49 September 2023 - Additional distribution license granted - License in Section 2.3 applies
+Outgoing License:           LA_OPT_NXP_Software_License v57 July 2024 - Additional distribution license granted - License in Section 2.3 applies
 License File:               LICENSE.txt
 Format:                     source code, header files, library
 Description and comments:   The MPP (Multimedia Processing Pipleine) preview library with time series support
 Location:                   ml_state_monitor/mcu_app/mpp/
 Origin:                     NXP
+
+--------------------------------------------
+
+Package:                    frdmmcxn947_ml_state_monitor (FRDM-MCXN947 ML State Monitor Application)
+Version:                    1.0.0
+Outgoing License:           BSD-3-Clause
+License File:               COPYING-BSD-3
+Format:                     source code, header files
+Description and comments:   Software support for running the ML State Monitor Application on FRDM-MCXN947
+Location:                   ml_state_monitor/mcu_app/boards/frdmmcxn947/ml_state_monitor/
+Origin:                     NXP (BSD-3-clause)
 
 --------------------------------------------
 
@@ -101,7 +110,7 @@ Origin:                     NXP (BSD-3-clause)
 --------------------------------------------
 
 Package:                    ML Application v2
-Version:                    2.0.0
+Version:                    2.1.0
 Outgoing License:           BSD-3-Clause
 License File:               COPYING-BSD-3
 Format:                     python script, training dataset csv files, ml models, header files
