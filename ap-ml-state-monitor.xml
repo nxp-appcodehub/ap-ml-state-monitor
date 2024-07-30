@@ -1,6 +1,9 @@
-<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" id="ap-ml-state-monitor" type="sw_pack" format="projectfile" name="ML State Monitor">
+<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" type="sw_pack" format="projectfile" versionSchema="1.0.0" name="ML State Monitor" uuid="0ce64f40-cd87-41f9-aa05-c0701bf9fa42" id="ap-ml-state-monitor">
+    <display_title>
+        ML State Monitor
+    </display_title>
     <overview>
-        <![CDATA[<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;">This repository holds the ML-Based System State  Monitor App SW Pack and depends on the MCUXpresso SDK overall delivery. This Application Software Pack relies on the Deep Learning (DL) subfield of ML and enables developers to develop and deploy neural networks on MCU-based systems for building smart sensing and state monitoring solutions.</span>]]>
+        <![CDATA[This Machine Learning (ML) application software pack relies on Deep Learning and enables developers to develop and deploy neural networks on MCU-based systems for building smart sensing applications that use time series real-time sensed data for system state monitoring.<br>]]>
     </overview>
     <toolchains>
         <toolchain name="mcux"></toolchain>
@@ -19,7 +22,7 @@
     </nxp_compatible_hw>
     <nxp_ebh_hw>
         <ebh id="nxp_frdm_stbi_a8974"></ebh>
-        <ebh id="mikroe_accel_4_click"/></ebh>
+        <ebh id="mikroe_accel_4_click"></ebh>
     </nxp_ebh_hw>
     <peripherals>
         <peripheral name="i2c"></peripheral>
